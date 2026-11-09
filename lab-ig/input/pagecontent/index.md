@@ -31,9 +31,9 @@ I FHIR R4 peker `ResearchStudy.site` på en `Location`. Et fysisk sted kan knytt
 
 ### Ressursrelasjoner
 
-Figuren viser hvordan studieopplysninger og målgruppe kan kobles til studiestedet, og hvordan opplysninger fra en person kan innhentes for en foreløpig vurdering.
+Figuren viser StudyFinder-profilene som er definert i guiden, hvilken FHIR-ressurs hver profil bygger på, og relasjonene mellom dem.
 
-![FHIR-ressurser for forskningsstudie, målgruppe, studiested og deltakeropplysninger](test.svg)
+![StudyFinder-profiler for forskningsstudie, målgruppe, studiested og deltakeropplysninger med FHIR-ressursene de bygger på](test.svg)
 
 ## Foreløpig vurdering av kriterier
 

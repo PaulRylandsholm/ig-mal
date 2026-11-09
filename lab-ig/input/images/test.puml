@@ -1,57 +1,80 @@
 @startuml
-title FHIR-ressurser for å finne forskningsstudier
+title StudyFinder-profiler og relasjoner
 left to right direction
 skinparam classAttributeIconSize 0
 skinparam shadowing false
 
-class ResearchStudy {
+class StudyFinderResearchStudy <<ResearchStudy>> {
     +title : string
     +status : code
-    +sponsor : Reference(Organization)
-    +site : Reference(Location)
-    +enrollment : Reference(Group)
+    +sponsor : Reference(StudyFinderOrganization)
+    +site : Reference(StudyFinderLocation)
+    +enrollment : Reference(StudyFinderStudyPopulation)
 }
 
-class Group {
+class StudyFinderStudyPopulation <<Group>> {
     +type : code
-    +membership : code
-    +characteristic : kriterier
+    +actual : boolean = false
+    +characteristic : criteria
 }
 
-class Organization {
+class StudyFinderOrganization <<Organization>> {
     +name : string
 }
 
-class Location {
+class StudyFinderLocation <<Location>> {
     +address : Address
     +position : coordinates
+    +managingOrganization : Reference(StudyFinderOrganization)
 }
 
-class Questionnaire
-class QuestionnaireResponse {
-    +answer : user data
+class StudyFinderParticipant <<Patient>> {
+    +birthDate : date
+    +gender : code
+    +address : Address
 }
 
-class Patient
-class Condition
-class Observation
-class MedicationStatement
+class StudyFinderCondition <<Condition>> {
+    +code : CodeableConcept
+    +clinicalStatus : CodeableConcept
+}
 
-ResearchStudy --> Location : site (0..*)
-ResearchStudy --> Group : enrollment (0..*)
-Location --> Organization : managingOrganization (0..1)
-Questionnaire "1" --> "0..*" QuestionnaireResponse : collects answers
-QuestionnaireResponse --> Patient : subject (0..1)
-Condition --> Patient : subject
-Observation --> Patient : subject (0..1)
-MedicationStatement --> Patient : subject
+class StudyFinderObservation <<Observation>> {
+    +code : CodeableConcept
+    +value[x] : value
+}
 
-note bottom of Group
+class StudyFinderMedicationStatement <<MedicationStatement>> {
+    +medication[x] : CodeableConcept or Reference
+}
+
+class StudyFinderQuestionnaire <<Questionnaire>> {
+    +status : code
+    +item : items
+}
+
+class StudyFinderQuestionnaireResponse <<QuestionnaireResponse>> {
+    +questionnaire : canonical
+    +status : code
+    +item : answers
+}
+
+StudyFinderResearchStudy --> StudyFinderOrganization : sponsor
+StudyFinderResearchStudy --> StudyFinderLocation : site
+StudyFinderResearchStudy --> StudyFinderStudyPopulation : enrollment
+StudyFinderLocation --> StudyFinderOrganization : managingOrganization
+StudyFinderQuestionnaireResponse --> StudyFinderQuestionnaire : questionnaire
+StudyFinderQuestionnaireResponse --> StudyFinderParticipant : subject
+StudyFinderCondition --> StudyFinderParticipant : subject
+StudyFinderObservation --> StudyFinderParticipant : subject
+StudyFinderMedicationStatement --> StudyFinderParticipant : subject
+
+note bottom of StudyFinderStudyPopulation
     Inclusion and exclusion criteria
-    can be evaluated individually.
+    are expressed as characteristics.
 end note
 
-note bottom of Patient
+note bottom of StudyFinderParticipant
     Use only the data needed
     for preliminary matching.
 end note
