@@ -39,6 +39,12 @@ class StudyFinderCondition <<Condition>> {
     +clinicalStatus : CodeableConcept
 }
 
+class StudyFinderHealthStatus <<Observation>> {
+    +code : CodeableConcept = health-status
+    +valueCodeableConcept : no-known-indications | known-indications | not-assessed
+    +subject : Reference(StudyFinderParticipant)
+}
+
 class StudyFinderObservation <<Observation>> {
     +code : CodeableConcept
     +value[x] : value
@@ -66,6 +72,7 @@ StudyFinderLocation --> StudyFinderOrganization : managingOrganization
 StudyFinderQuestionnaireResponse --> StudyFinderQuestionnaire : questionnaire
 StudyFinderQuestionnaireResponse --> StudyFinderParticipant : subject
 StudyFinderCondition --> StudyFinderParticipant : subject
+StudyFinderHealthStatus --> StudyFinderParticipant : subject
 StudyFinderObservation --> StudyFinderParticipant : subject
 StudyFinderMedicationStatement --> StudyFinderParticipant : subject
 

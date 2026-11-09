@@ -78,6 +78,38 @@ Description: "Helsetilstand som kan være relevant for inklusjons- eller eksklus
 * code MS
 * clinicalStatus MS
 
+CodeSystem: StudyFinderHealthStatusCS
+Id: studyfinder-health-status-codes
+Title: "Helsestatus for studiesøk"
+* #health-status "Helsestatus"
+* #no-known-indications "Ingen kjente indikasjoner"
+* #known-indications "Kjente indikasjoner"
+* #not-assessed "Ikke vurdert"
+
+ValueSet: StudyFinderHealthStatusVS
+Id: studyfinder-health-status-values
+Title: "Helsestatusverdier for studiesøk"
+* include StudyFinderHealthStatusCS#no-known-indications
+* include StudyFinderHealthStatusCS#known-indications
+* include StudyFinderHealthStatusCS#not-assessed
+
+Profile: StudyFinderHealthStatus
+Id: studyfinder-health-status-observation
+Parent: Observation
+Title: "Helsestatus for potensiell studiedeltaker"
+Description: "Eksplisitt helsestatus, inkludert om personen oppgir at det ikke foreligger kjente indikasjoner."
+* ^status = #draft
+* ^publisher = "HL7 Norge"
+* status 1..1 MS
+* code 1..1 MS
+* code = StudyFinderHealthStatusCS#health-status
+* subject only Reference(StudyFinderParticipant)
+* subject 1..1 MS
+* effective[x] MS
+* value[x] only CodeableConcept
+* valueCodeableConcept 1..1 MS
+* valueCodeableConcept from StudyFinderHealthStatusVS (required)
+
 Profile: StudyFinderObservation
 Id: studyfinder-observation
 Parent: Observation
