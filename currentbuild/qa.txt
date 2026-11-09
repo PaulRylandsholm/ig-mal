@@ -3,7 +3,7 @@ Mal : Validation Results
 
 err = 1, warn = 17, info = 7, broken links = 0
 IG Publisher Version: 3.0.3
-Generated Mon Nov 09 10:37:07 UTC 2026. FHIR version 4.0.1 for hl7.fhir.no.mal#0.1.0 (canonical = http://hl7.no/fhir/ig/mal)
+Generated Mon Nov 09 10:52:24 UTC 2026. FHIR version 4.0.1 for hl7.fhir.no.mal#0.1.0 (canonical = http://hl7.no/fhir/ig/mal)
  Build Errors : 0 / 13 / 0
  /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/ImplementationGuide-hl7.fhir.no.mal : 0 / 2 / 3
  /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/Patient-Pasient-1 : 0 / 0 / 1
