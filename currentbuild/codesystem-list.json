@@ -1,3 +1,10 @@
 {
-  "codeSystems" : []
+  "codeSystems" : [{
+    "url" : "http://hl7.no/fhir/ig/studyfinder/CodeSystem/studyfinder-health-status-codes",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "StudyFinderHealthStatusCS",
+    "title" : "Helsestatus for studiesøk",
+    "description" : ""
+  }]
 }

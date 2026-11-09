@@ -1,1 +1,2 @@
 URL,Version,Status,OIDs,Name,Title,Description,Used
+http://hl7.no/fhir/ig/studyfinder/CodeSystem/studyfinder-health-status-codes,0.1.0,draft,,StudyFinderHealthStatusCS,Helsestatus for studiesøk,"",

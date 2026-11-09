@@ -7,9 +7,18 @@
 
 ## Resources
 
+### CodeSystems
+
+* [Helsestatus for studiesøk](CodeSystem-studyfinder-health-status-codes.md)
+
+### ValueSets
+
+* [Helsestatusverdier for studiesøk](ValueSet-studyfinder-health-status-values.md)
+
 ### Resource Profiles
 
 * [Helsetilstand for vurdering mot studiekriterier](StructureDefinition-studyfinder-condition.md)
+* [Helsestatus for potensiell studiedeltaker](StructureDefinition-studyfinder-health-status-observation.md)
 * [Fysisk studiested](StructureDefinition-studyfinder-location.md)
 * [Legemiddelbruk for vurdering mot studiekriterier](StructureDefinition-studyfinder-medication-statement.md)
 * [Måling for vurdering mot studiekriterier](StructureDefinition-studyfinder-observation.md)

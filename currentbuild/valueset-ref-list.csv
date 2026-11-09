@@ -1,1 +1,2 @@
 URL,Version,Status,OIDs,Name,Title,Description,Uses,Used,Sources
+http://hl7.no/fhir/ig/studyfinder/ValueSet/studyfinder-health-status-values,0.1.0,draft,,StudyFinderHealthStatusVS,Helsestatusverdier for studiesøk,"","StructureDefinition/studyfinder-health-status-observation","Internal"

@@ -1,4 +1,11 @@
 [{
+  "id" : "studyfinder-health-status-codes",
+  "type" : "CodeSystem",
+  "url" : "http://hl7.no/fhir/ig/studyfinder/CodeSystem/studyfinder-health-status-codes",
+  "version" : "0.1.0",
+  "name" : "StudyFinderHealthStatusCS"
+},
+{
   "id" : "hl7.fhir.no.studyfinder",
   "type" : "ImplementationGuide",
   "url" : "http://hl7.no/fhir/ig/studyfinder/ImplementationGuide/hl7.fhir.no.studyfinder",
@@ -11,6 +18,13 @@
   "url" : "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-condition",
   "version" : "0.1.0",
   "name" : "StudyFinderCondition"
+},
+{
+  "id" : "studyfinder-health-status-observation",
+  "type" : "StructureDefinition",
+  "url" : "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-health-status-observation",
+  "version" : "0.1.0",
+  "name" : "StudyFinderHealthStatus"
 },
 {
   "id" : "studyfinder-location",
@@ -74,4 +88,11 @@
   "url" : "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-study-population",
   "version" : "0.1.0",
   "name" : "StudyFinderStudyPopulation"
+},
+{
+  "id" : "studyfinder-health-status-values",
+  "type" : "ValueSet",
+  "url" : "http://hl7.no/fhir/ig/studyfinder/ValueSet/studyfinder-health-status-values",
+  "version" : "0.1.0",
+  "name" : "StudyFinderHealthStatusVS"
 }]

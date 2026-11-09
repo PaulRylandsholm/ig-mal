@@ -17,7 +17,7 @@
   fhir:StructureDefinition.name [ fhir:value "StudyFinderCondition"] ;
   fhir:StructureDefinition.title [ fhir:value "Helsetilstand for vurdering mot studiekriterier"] ;
   fhir:StructureDefinition.status [ fhir:value "draft"] ;
-  fhir:StructureDefinition.date [ fhir:value "2026-11-09T12:54:59+00:00"^^xsd:dateTime] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-11-09T14:07:54+00:00"^^xsd:dateTime] ;
   fhir:StructureDefinition.publisher [ fhir:value "HL7 Norge"] ;
   fhir:StructureDefinition.contact [
      fhir:index 0 ;

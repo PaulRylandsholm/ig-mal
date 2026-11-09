@@ -16,7 +16,7 @@ Personopplysninger som kan brukes ved en foreløpig vurdering mot studiekriterie
 
 **Usages:**
 
-* Refer to this Profile: [Helsetilstand for vurdering mot studiekriterier](StructureDefinition-studyfinder-condition.md), [Legemiddelbruk for vurdering mot studiekriterier](StructureDefinition-studyfinder-medication-statement.md), [Måling for vurdering mot studiekriterier](StructureDefinition-studyfinder-observation.md) and [Svar på spørreskjema for studiesøk](StructureDefinition-studyfinder-questionnaire-response.md)
+* Refer to this Profile: [Helsetilstand for vurdering mot studiekriterier](StructureDefinition-studyfinder-condition.md), [Helsestatus for potensiell studiedeltaker](StructureDefinition-studyfinder-health-status-observation.md), [Legemiddelbruk for vurdering mot studiekriterier](StructureDefinition-studyfinder-medication-statement.md), [Måling for vurdering mot studiekriterier](StructureDefinition-studyfinder-observation.md) and [Svar på spørreskjema for studiesøk](StructureDefinition-studyfinder-questionnaire-response.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.fhir.no.studyfinder|current/StructureDefinition/StructureDefinition-studyfinder-participant.json)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-studyfinder-particip
   "name" : "StudyFinderParticipant",
   "title" : "Potensiell studiedeltaker",
   "status" : "draft",
-  "date" : "2026-11-09T12:54:59+00:00",
+  "date" : "2026-11-09T14:07:54+00:00",
   "publisher" : "HL7 Norge",
   "contact" : [{
     "name" : "HL7 Norge",

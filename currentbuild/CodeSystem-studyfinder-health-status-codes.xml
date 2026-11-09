@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="studyfinder-health-status-codes"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem studyfinder-health-status-codes</b></p><a name="studyfinder-health-status-codes"> </a><a name="hcstudyfinder-health-status-codes"> </a><p>This  code system <code>http://hl7.no/fhir/ig/studyfinder/CodeSystem/studyfinder-health-status-codes</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap">health-status<a name="studyfinder-health-status-codes-health-status"> </a></td><td>Helsestatus</td></tr><tr><td style="white-space:nowrap">no-known-indications<a name="studyfinder-health-status-codes-no-known-indications"> </a></td><td>Ingen kjente indikasjoner</td></tr><tr><td style="white-space:nowrap">known-indications<a name="studyfinder-health-status-codes-known-indications"> </a></td><td>Kjente indikasjoner</td></tr><tr><td style="white-space:nowrap">not-assessed<a name="studyfinder-health-status-codes-not-assessed"> </a></td><td>Ikke vurdert</td></tr></table></div>
+  </text>
+  <url value="http://hl7.no/fhir/ig/studyfinder/CodeSystem/studyfinder-health-status-codes"/>
+  <version value="0.1.0"/>
+  <name value="StudyFinderHealthStatusCS"/>
+  <title value="Helsestatus for studiesøk"/>
+  <status value="draft"/>
+  <date value="2026-11-09T14:07:54+00:00"/>
+  <publisher value="HL7 Norge"/>
+  <contact>
+    <name value="HL7 Norge"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.hl7.no"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="NO"/>
+      <display value="Norway"/>
+    </coding>
+  </jurisdiction>
+  <content value="complete"/>
+  <count value="4"/>
+  <concept>
+    <code value="health-status"/>
+    <display value="Helsestatus"/>
+  </concept>
+  <concept>
+    <code value="no-known-indications"/>
+    <display value="Ingen kjente indikasjoner"/>
+  </concept>
+  <concept>
+    <code value="known-indications"/>
+    <display value="Kjente indikasjoner"/>
+  </concept>
+  <concept>
+    <code value="not-assessed"/>
+    <display value="Ikke vurdert"/>
+  </concept>
+</CodeSystem>

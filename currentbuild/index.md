@@ -84,7 +84,7 @@ Helseopplysninger er sensitive personopplysninger. Tjenester som bruker denne gu
   "name" : "StudyFinder",
   "title" : "Forskningsstudier for deltakere",
   "status" : "draft",
-  "date" : "2026-11-09T12:54:59+00:00",
+  "date" : "2026-11-09T14:07:54+00:00",
   "publisher" : "HL7 Norge",
   "contact" : [{
     "name" : "HL7 Norge",
@@ -440,6 +440,52 @@ Helseopplysninger er sensitive personopplysninger. Tjenester som bruker denne gu
       },
       "name" : "Fysisk studiested",
       "description" : "Fysisk studiested med adresse og eventuell geografisk posisjon.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-studyfinder-health-status-observation.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/studyfinder-health-status-observation"
+      },
+      "name" : "Helsestatus for potensiell studiedeltaker",
+      "description" : "Eksplisitt helsestatus, inkludert om personen oppgir at det ikke foreligger kjente indikasjoner.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-studyfinder-health-status-codes.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/studyfinder-health-status-codes"
+      },
+      "name" : "Helsestatus for studiesøk",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-studyfinder-health-status-values.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/studyfinder-health-status-values"
+      },
+      "name" : "Helsestatusverdier for studiesøk",
       "exampleBoolean" : false
     },
     {

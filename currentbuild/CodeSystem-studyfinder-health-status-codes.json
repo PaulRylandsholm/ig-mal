@@ -1,0 +1,47 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "studyfinder-health-status-codes",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem studyfinder-health-status-codes</b></p><a name=\"studyfinder-health-status-codes\"> </a><a name=\"hcstudyfinder-health-status-codes\"> </a><p>This  code system <code>http://hl7.no/fhir/ig/studyfinder/CodeSystem/studyfinder-health-status-codes</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">health-status<a name=\"studyfinder-health-status-codes-health-status\"> </a></td><td>Helsestatus</td></tr><tr><td style=\"white-space:nowrap\">no-known-indications<a name=\"studyfinder-health-status-codes-no-known-indications\"> </a></td><td>Ingen kjente indikasjoner</td></tr><tr><td style=\"white-space:nowrap\">known-indications<a name=\"studyfinder-health-status-codes-known-indications\"> </a></td><td>Kjente indikasjoner</td></tr><tr><td style=\"white-space:nowrap\">not-assessed<a name=\"studyfinder-health-status-codes-not-assessed\"> </a></td><td>Ikke vurdert</td></tr></table></div>"
+  },
+  "url" : "http://hl7.no/fhir/ig/studyfinder/CodeSystem/studyfinder-health-status-codes",
+  "version" : "0.1.0",
+  "name" : "StudyFinderHealthStatusCS",
+  "title" : "Helsestatus for studiesøk",
+  "status" : "draft",
+  "date" : "2026-11-09T14:07:54+00:00",
+  "publisher" : "HL7 Norge",
+  "contact" : [{
+    "name" : "HL7 Norge",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.hl7.no"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "NO",
+      "display" : "Norway"
+    }]
+  }],
+  "content" : "complete",
+  "count" : 4,
+  "concept" : [{
+    "code" : "health-status",
+    "display" : "Helsestatus"
+  },
+  {
+    "code" : "no-known-indications",
+    "display" : "Ingen kjente indikasjoner"
+  },
+  {
+    "code" : "known-indications",
+    "display" : "Kjente indikasjoner"
+  },
+  {
+    "code" : "not-assessed",
+    "display" : "Ikke vurdert"
+  }]
+}

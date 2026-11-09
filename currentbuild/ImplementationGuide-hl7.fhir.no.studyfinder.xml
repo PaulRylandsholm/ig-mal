@@ -11,7 +11,7 @@
   <name value="StudyFinder"/>
   <title value="Forskningsstudier for deltakere"/>
   <status value="draft"/>
-  <date value="2026-11-09T12:54:59+00:00"/>
+  <date value="2026-11-09T14:07:54+00:00"/>
   <publisher value="HL7 Norge"/>
   <contact>
     <name value="HL7 Norge"/>
@@ -276,6 +276,37 @@
       </reference>
       <name value="Fysisk studiested"/>
       <description value="Fysisk studiested med adresse og eventuell geografisk posisjon."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/studyfinder-health-status-observation"/>
+      </reference>
+      <name value="Helsestatus for potensiell studiedeltaker"/>
+      <description value="Eksplisitt helsestatus, inkludert om personen oppgir at det ikke foreligger kjente indikasjoner."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/studyfinder-health-status-codes"/>
+      </reference>
+      <name value="Helsestatus for studiesøk"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/studyfinder-health-status-values"/>
+      </reference>
+      <name value="Helsestatusverdier for studiesøk"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

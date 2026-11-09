@@ -1,5 +1,17 @@
 {
   "codeSystems" : [{
+    "url" : "http://hl7.no/fhir/ig/studyfinder/ValueSet/studyfinder-health-status-values",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "StudyFinderHealthStatusVS",
+    "title" : "Helsestatusverdier for studiesøk",
+    "description" : "",
+    "systems" : ["http://hl7.no/fhir/ig/studyfinder/CodeSystem/studyfinder-health-status-codes"],
+    "uses" : {
+    },
+    "StructureDefinition-studyfinder-health-status-observation.html" : "Helsestatus for potensiell studiedeltaker"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/address-type",
     "version" : "4.0.1",
     "status" : "active",
@@ -53,8 +65,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.141"],
     "uses" : {
     },
+    "StructureDefinition-studyfinder-condition.html" : "Helsetilstand for vurdering mot studiekriterier",
     "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier",
-    "StructureDefinition-studyfinder-condition.html" : "Helsetilstand for vurdering mot studiekriterier"
+    "StructureDefinition-studyfinder-health-status-observation.html" : "Helsestatus for potensiell studiedeltaker"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/condition-category",
@@ -96,9 +109,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.161"],
     "uses" : {
     },
-    "StructureDefinition-studyfinder-medication-statement.html" : "Legemiddelbruk for vurdering mot studiekriterier",
+    "StructureDefinition-studyfinder-condition.html" : "Helsetilstand for vurdering mot studiekriterier",
     "StructureDefinition-studyfinder-research-study.html" : "Forskningsstudie for studiefinning",
-    "StructureDefinition-studyfinder-condition.html" : "Helsetilstand for vurdering mot studiekriterier"
+    "StructureDefinition-studyfinder-medication-statement.html" : "Legemiddelbruk for vurdering mot studiekriterier"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/condition-severity",
@@ -182,7 +195,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.5"],
     "uses" : {
     },
-    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier"
+    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier",
+    "StructureDefinition-studyfinder-health-status-observation.html" : "Helsestatus for potensiell studiedeltaker"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/days-of-week",
@@ -255,16 +269,17 @@
     "sources" : ["2.16.840.1.113883.4.642.3.20"],
     "uses" : {
     },
-    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier",
-    "StructureDefinition-studyfinder-medication-statement.html" : "Legemiddelbruk for vurdering mot studiekriterier",
-    "StructureDefinition-studyfinder-participant.html" : "Potensiell studiedeltaker",
-    "StructureDefinition-studyfinder-study-population.html" : "Målgruppe for forskningsstudie",
-    "StructureDefinition-studyfinder-location.html" : "Fysisk studiested",
-    "StructureDefinition-studyfinder-organization.html" : "Organisasjon for forskningsstudie",
+    "StructureDefinition-studyfinder-condition.html" : "Helsetilstand for vurdering mot studiekriterier",
     "StructureDefinition-studyfinder-research-study.html" : "Forskningsstudie for studiefinning",
-    "StructureDefinition-studyfinder-questionnaire.html" : "Spørreskjema for studiesøk",
+    "StructureDefinition-studyfinder-participant.html" : "Potensiell studiedeltaker",
+    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier",
+    "StructureDefinition-studyfinder-health-status-observation.html" : "Helsestatus for potensiell studiedeltaker",
+    "StructureDefinition-studyfinder-medication-statement.html" : "Legemiddelbruk for vurdering mot studiekriterier",
     "StructureDefinition-studyfinder-questionnaire-response.html" : "Svar på spørreskjema for studiesøk",
-    "StructureDefinition-studyfinder-condition.html" : "Helsetilstand for vurdering mot studiekriterier"
+    "StructureDefinition-studyfinder-study-population.html" : "Målgruppe for forskningsstudie",
+    "StructureDefinition-studyfinder-questionnaire.html" : "Spørreskjema for studiesøk",
+    "StructureDefinition-studyfinder-organization.html" : "Organisasjon for forskningsstudie",
+    "StructureDefinition-studyfinder-location.html" : "Fysisk studiested"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/link-type",
@@ -405,7 +420,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.403"],
     "uses" : {
     },
-    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier"
+    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier",
+    "StructureDefinition-studyfinder-health-status-observation.html" : "Helsestatus for potensiell studiedeltaker"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-codes",
@@ -419,7 +435,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.396"],
     "uses" : {
     },
-    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier"
+    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier",
+    "StructureDefinition-studyfinder-health-status-observation.html" : "Helsestatus for potensiell studiedeltaker"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-interpretation",
@@ -433,7 +450,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.399"],
     "uses" : {
     },
-    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier"
+    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier",
+    "StructureDefinition-studyfinder-health-status-observation.html" : "Helsestatus for potensiell studiedeltaker"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-methods",
@@ -447,7 +465,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.395"],
     "uses" : {
     },
-    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier"
+    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier",
+    "StructureDefinition-studyfinder-health-status-observation.html" : "Helsestatus for potensiell studiedeltaker"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-status",
@@ -461,7 +480,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.400"],
     "uses" : {
     },
-    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier"
+    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier",
+    "StructureDefinition-studyfinder-health-status-observation.html" : "Helsestatus for potensiell studiedeltaker"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/organization-type",
@@ -517,8 +537,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.446"],
     "uses" : {
     },
-    "StructureDefinition-studyfinder-questionnaire.html" : "Spørreskjema for studiesøk",
-    "StructureDefinition-studyfinder-questionnaire-response.html" : "Svar på spørreskjema for studiesøk"
+    "StructureDefinition-studyfinder-questionnaire-response.html" : "Svar på spørreskjema for studiesøk",
+    "StructureDefinition-studyfinder-questionnaire.html" : "Spørreskjema for studiesøk"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/questionnaire-answers-status",
@@ -603,7 +623,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.407"],
     "uses" : {
     },
-    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier"
+    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier",
+    "StructureDefinition-studyfinder-health-status-observation.html" : "Helsestatus for potensiell studiedeltaker"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/referencerange-meaning",
@@ -617,7 +638,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.397"],
     "uses" : {
     },
-    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier"
+    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier",
+    "StructureDefinition-studyfinder-health-status-observation.html" : "Helsestatus for potensiell studiedeltaker"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/research-study-objective-type",

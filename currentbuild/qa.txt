@@ -1,12 +1,14 @@
 StudyFinder : Validation Results
 =========================================
 
-err = 0, warn = 24, info = 23, broken links = 0
+err = 5, warn = 30, info = 30, broken links = 0
 IG Publisher Version: 3.0.3
-Generated Mon Nov 09 12:56:09 UTC 2026. FHIR version 4.0.1 for hl7.fhir.no.studyfinder#0.1.0 (canonical = http://hl7.no/fhir/ig/studyfinder)
- Build Errors : 0 / 12 / 0
+Generated Mon Nov 09 14:09:48 UTC 2026. FHIR version 4.0.1 for hl7.fhir.no.studyfinder#0.1.0 (canonical = http://hl7.no/fhir/ig/studyfinder)
+ Build Errors : 0 / 14 / 0
+ /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/CodeSystem-studyfinder-health-status-codes : 3 / 2 / 3
  /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/ImplementationGuide-hl7.fhir.no.studyfinder : 0 / 2 / 3
  /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-condition : 0 / 1 / 4
+ /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-health-status-observation : 0 / 1 / 5
  /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-location : 0 / 1 / 3
  /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-medication-statement : 0 / 1 / 3
  /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-observation : 0 / 1 / 3
@@ -16,9 +18,12 @@ Generated Mon Nov 09 12:56:09 UTC 2026. FHIR version 4.0.1 for hl7.fhir.no.study
  /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-questionnaire-response : 0 / 1 / 3
  /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-research-study : 0 / 1 / 3
  /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-study-population : 0 / 1 / 3
+ /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/ValueSet-studyfinder-health-status-values : 2 / 1 / 2
 </table>
 
 == n/a ==
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/studyfinder-health-status-values.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource CodeSystem/studyfinder-health-status-codes.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: /__w/ig-mal/ig-mal/lab-ig/output/searchform.html: The html source is not well formed: Found "</a>" expecting "</img>" at line 34 column 177
 WARNING: /__w/ig-mal/ig-mal/lab-ig/output/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 79 column 10
 WARNING: /__w/ig-mal/ig-mal/lab-ig/output/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 80 column 9
@@ -33,6 +38,16 @@ WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-ta
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
 
 
+== fsh-generated/resources/CodeSystem-studyfinder-health-status-codes.json ==
+INFORMATION: CodeSystem/studyfinder-health-status-codes: CodeSystem.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
+INFORMATION: CodeSystem/studyfinder-health-status-codes: CodeSystem: CodeSystems SHOULD have a stated value for the caseSensitive element so that users know the status and meaning of the code system clearly
+ERROR: CodeSystem/studyfinder-health-status-codes: CodeSystem: Code systems published by HL7 SHALL conform to the ShareableCodeSystem profile, which says that the element CodeSystem.experimental is mandatory, but it is not present
+ERROR: CodeSystem/studyfinder-health-status-codes: CodeSystem: Code systems published by HL7 SHALL conform to the ShareableCodeSystem profile, which says that the element CodeSystem.description is mandatory, but it is not present
+ERROR: CodeSystem/studyfinder-health-status-codes: CodeSystem: Code systems published by HL7 SHALL conform to the ShareableCodeSystem profile, which says that the element CodeSystem.caseSensitive is mandatory, but it is not present
+WARNING: CodeSystem/studyfinder-health-status-codes: CodeSystem.concept[0]: HL7 Defined CodeSystems should ensure that every concept has a definition
+WARNING: Resource: The resource CodeSystem/studyfinder-health-status-codes should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+
 == fsh-generated/resources/ImplementationGuide-hl7.fhir.no.studyfinder.json ==
 INFORMATION: ImplementationGuide/hl7.fhir.no.studyfinder: ImplementationGuide.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
 WARNING: ImplementationGuide/hl7.fhir.no.studyfinder: ImplementationGuide.dependsOn[2].uri: A definition could not be found for Canonical URL 'http://fhir.org/packages/hl7.fhir.no.basis/ImplementationGuide/hl7.fhir.no.basis'
@@ -45,6 +60,14 @@ INFORMATION: StructureDefinition/studyfinder-condition: StructureDefinition.juri
 INFORMATION: StructureDefinition/studyfinder-condition: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.4.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
 INFORMATION: Resource: The resource StructureDefinition/studyfinder-condition could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
 WARNING: StructureDefinition.where(url = 'http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-condition'): The Implementation Guide contains no examples for this profile
+
+
+== fsh-generated/resources/StructureDefinition-studyfinder-health-status-observation.json ==
+INFORMATION: StructureDefinition/studyfinder-health-status-observation: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
+INFORMATION: StructureDefinition/studyfinder-health-status-observation: StructureDefinition.snapshot.element[14].pattern.ofType(CodeableConcept): Reference to draft CodeSystem http://hl7.no/fhir/ig/studyfinder/CodeSystem/studyfinder-health-status-codes|0.1.0
+INFORMATION: StructureDefinition/studyfinder-health-status-observation: StructureDefinition.differential.element[2].pattern.ofType(CodeableConcept): Reference to draft CodeSystem http://hl7.no/fhir/ig/studyfinder/CodeSystem/studyfinder-health-status-codes|0.1.0
+INFORMATION: Resource: The resource StructureDefinition/studyfinder-health-status-observation could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+WARNING: StructureDefinition.where(url = 'http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-health-status-observation'): The Implementation Guide contains no examples for this profile
 
 
 == fsh-generated/resources/StructureDefinition-studyfinder-location.json ==
@@ -99,5 +122,12 @@ WARNING: StructureDefinition.where(url = 'http://hl7.no/fhir/ig/studyfinder/Stru
 INFORMATION: StructureDefinition/studyfinder-study-population: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
 INFORMATION: Resource: The resource StructureDefinition/studyfinder-study-population could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
 WARNING: StructureDefinition.where(url = 'http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-study-population'): The Implementation Guide contains no examples for this profile
+
+
+== fsh-generated/resources/ValueSet-studyfinder-health-status-values.json ==
+INFORMATION: ValueSet/studyfinder-health-status-values: ValueSet.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
+ERROR: ValueSet/studyfinder-health-status-values: ValueSet: Value sets published by HL7 SHALL conform to the ShareableValueSet profile, which says that the element ValueSet.experimental is mandatory, but it is not present
+ERROR: ValueSet/studyfinder-health-status-values: ValueSet: Value sets published by HL7 SHALL conform to the ShareableValueSet profile, which says that the element ValueSet.description is mandatory, but it is not present
+WARNING: Resource: The resource ValueSet/studyfinder-health-status-values should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
 
 

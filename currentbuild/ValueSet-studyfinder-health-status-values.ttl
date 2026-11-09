@@ -1,0 +1,63 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.no/fhir/ig/studyfinder/ValueSet/studyfinder-health-status-values> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "studyfinder-health-status-values"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet studyfinder-health-status-values</b></p><a name=\"studyfinder-health-status-values\"> </a><a name=\"hcstudyfinder-health-status-values\"> </a><ul><li>Include these codes as defined in <a href=\"CodeSystem-studyfinder-health-status-codes.html\"><code>http://hl7.no/fhir/ig/studyfinder/CodeSystem/studyfinder-health-status-codes</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?0.1.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"CodeSystem-studyfinder-health-status-codes.html#studyfinder-health-status-codes-no-known-indications\">no-known-indications</a></td><td style=\"color: #cccccc\">Ingen kjente indikasjoner</td></tr><tr><td><a href=\"CodeSystem-studyfinder-health-status-codes.html#studyfinder-health-status-codes-known-indications\">known-indications</a></td><td style=\"color: #cccccc\">Kjente indikasjoner</td></tr><tr><td><a href=\"CodeSystem-studyfinder-health-status-codes.html#studyfinder-health-status-codes-not-assessed\">not-assessed</a></td><td style=\"color: #cccccc\">Ikke vurdert</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "http://hl7.no/fhir/ig/studyfinder/ValueSet/studyfinder-health-status-values"] ;
+  fhir:ValueSet.version [ fhir:value "0.1.0"] ;
+  fhir:ValueSet.name [ fhir:value "StudyFinderHealthStatusVS"] ;
+  fhir:ValueSet.title [ fhir:value "Helsestatusverdier for studiesøk"] ;
+  fhir:ValueSet.status [ fhir:value "draft"] ;
+  fhir:ValueSet.date [ fhir:value "2026-11-09T14:07:54+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "HL7 Norge"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "HL7 Norge" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.hl7.no" ]
+     ]
+  ] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "NO" ] ;
+       fhir:Coding.display [ fhir:value "Norway" ]
+     ]
+  ] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://hl7.no/fhir/ig/studyfinder/CodeSystem/studyfinder-health-status-codes" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "no-known-indications" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "known-indications" ]
+       ], [
+         fhir:index 2 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "not-assessed" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.no/fhir/ig/studyfinder/ValueSet/studyfinder-health-status-values.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

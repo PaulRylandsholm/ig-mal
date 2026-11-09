@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "StudyFinder"] ;
   fhir:ImplementationGuide.title [ fhir:value "Forskningsstudier for deltakere"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-11-09T12:54:59+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-11-09T14:07:54+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "HL7 Norge"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;
@@ -424,6 +424,46 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-health-status-observation> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/studyfinder-health-status-observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Helsestatus for potensiell studiedeltaker" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Eksplisitt helsestatus, inkludert om personen oppgir at det ikke foreligger kjente indikasjoner." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 3 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "CodeSystem" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.no/fhir/ig/studyfinder/CodeSystem/studyfinder-health-status-codes> ;
+         fhir:Reference.reference [ fhir:value "CodeSystem/studyfinder-health-status-codes" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Helsestatus for studiesøk" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 4 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.no/fhir/ig/studyfinder/ValueSet/studyfinder-health-status-values> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/studyfinder-health-status-values" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Helsestatusverdier for studiesøk" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 5 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-condition> ;
          fhir:Reference.reference [ fhir:value "StructureDefinition/studyfinder-condition" ]
        ] ;
@@ -431,7 +471,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Helsetilstand som kan være relevant for inklusjons- eller eksklusjonskriterier." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 3 ;
+       fhir:index 6 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -445,7 +485,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Legemiddelbruk som kan være relevant for inklusjons- eller eksklusjonskriterier." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 4 ;
+       fhir:index 7 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -459,7 +499,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Definisjon av målgruppen og strukturerte inklusjons- og eksklusjonskriterier for en forskningsstudie." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 5 ;
+       fhir:index 8 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -473,7 +513,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Måling eller klinisk observasjon som kan være relevant for studiekriterier." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 6 ;
+       fhir:index 9 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -487,7 +527,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Sponsor, ansvarlig organisasjon eller organisasjon som er studiested." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 7 ;
+       fhir:index 10 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -501,7 +541,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Personopplysninger som kan brukes ved en foreløpig vurdering mot studiekriterier." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 8 ;
+       fhir:index 11 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -515,7 +555,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Spørreskjema for strukturert innhenting av nødvendige opplysninger fra en person som leter etter studier." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 9 ;
+       fhir:index 12 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;

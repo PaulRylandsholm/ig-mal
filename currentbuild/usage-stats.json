@@ -11,6 +11,12 @@
         "title": "Helsetilstand for vurdering mot studiekriterier"
       }
     ],
+    "Observation": [
+      {
+        "url": "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-observation",
+        "title": "Måling for vurdering mot studiekriterier"
+      }
+    ],
     "Location": [
       {
         "url": "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-location",
@@ -21,12 +27,6 @@
       {
         "url": "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-medication-statement",
         "title": "Legemiddelbruk for vurdering mot studiekriterier"
-      }
-    ],
-    "Observation": [
-      {
-        "url": "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-observation",
-        "title": "Måling for vurdering mot studiekriterier"
       }
     ],
     "Organization": [
