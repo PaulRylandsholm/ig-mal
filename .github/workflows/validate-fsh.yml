@@ -15,11 +15,13 @@ on:
         type: boolean
   pull_request:
     paths:
+      - '.github/workflows/validate-fsh.yml'
       - 'lab-ig/input/fsh/**'
       - 'lab-ig/sushi-config.yaml'
   push:
     branches: [main]
     paths:
+      - '.github/workflows/validate-fsh.yml'
       - 'lab-ig/input/fsh/**'
       - 'lab-ig/sushi-config.yaml'
 
@@ -39,11 +41,6 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-        
-    - name: Setup Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.x'
         
     - name: Cache Node.js modules
       uses: actions/cache@v4
@@ -70,14 +67,12 @@ jobs:
         cp -r ./node_modules/hl7.fhir.no.basis/* $HOME/.fhir/packages/hl7.fhir.no.basis#2.2.2/package
 
 
-    - name: Install fsh-validator
-      run: pip install -U git+https://github.com/glichtner/fsh-validator
-
-    - name: Run fsh-validator
+    - name: Run FSH validation
+      shell: bash
       run: |
-        cd ${{ env.IG_SHORTNAME }}/input/fsh/
+        cd ${{ env.IG_SHORTNAME }}
         echo "🔍 Running FSH validation..."
-        fsh-validator --all --log-path fsh-validator.log
+        sushi . 2>&1 | tee input/fsh/fsh-validator.log
         echo "✅ FSH validation completed"
         
     - name: Run SUSHI validation
@@ -109,10 +104,10 @@ jobs:
           cat fsh-validator.log
           
           # Check if there are any errors
-          if grep -q "ERROR\|FATAL" fsh-validator.log; then
+          if grep -qE "^error |^fatal " fsh-validator.log; then
             echo "❌ FSH validation failed with errors"
             validation_failed=true
-          elif grep -q "WARN" fsh-validator.log; then
+          elif grep -qE "^warn " fsh-validator.log; then
             echo "⚠️  FSH validation completed with warnings"
           else
             echo "✅ FSH validation passed successfully"
@@ -174,12 +169,12 @@ jobs:
         echo "" >> $GITHUB_STEP_SUMMARY
         
         # FSH Validation Summary
-        echo "### FSH Validator" >> $GITHUB_STEP_SUMMARY
+        echo "### FSH Validation" >> $GITHUB_STEP_SUMMARY
         
         FSH_LOG_PATH="${{ github.workspace }}/${{ env.IG_SHORTNAME }}/input/fsh/fsh-validator.log"
         if [ -f "$FSH_LOG_PATH" ]; then
-          fsh_error_count=$(grep -c "ERROR\|FATAL" "$FSH_LOG_PATH" || true)
-          fsh_warning_count=$(grep -c "WARN" "$FSH_LOG_PATH" || true)
+          fsh_error_count=$(grep -cE "^error |^fatal " "$FSH_LOG_PATH" || true)
+          fsh_warning_count=$(grep -cE "^warn " "$FSH_LOG_PATH" || true)
           
           echo "| Metric | Count |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
@@ -235,7 +230,7 @@ jobs:
         # Detailed Logs
         if [ -f "$FSH_LOG_PATH" ]; then
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### FSH Validator Log" >> $GITHUB_STEP_SUMMARY
+          echo "### FSH Validation Log" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           cat "$FSH_LOG_PATH" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
