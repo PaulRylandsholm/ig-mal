@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-studyfinder-organiza
   "name" : "StudyFinderOrganization",
   "title" : "Organisasjon for forskningsstudie",
   "status" : "draft",
-  "date" : "2026-11-09T12:40:26+00:00",
+  "date" : "2026-11-09T12:54:59+00:00",
   "publisher" : "HL7 Norge",
   "contact" : [{
     "name" : "HL7 Norge",

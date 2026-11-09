@@ -53,8 +53,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.141"],
     "uses" : {
     },
-    "StructureDefinition-studyfinder-condition.html" : "Helsetilstand for vurdering mot studiekriterier",
-    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier"
+    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier",
+    "StructureDefinition-studyfinder-condition.html" : "Helsetilstand for vurdering mot studiekriterier"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/condition-category",
@@ -96,9 +96,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.161"],
     "uses" : {
     },
+    "StructureDefinition-studyfinder-medication-statement.html" : "Legemiddelbruk for vurdering mot studiekriterier",
     "StructureDefinition-studyfinder-research-study.html" : "Forskningsstudie for studiefinning",
-    "StructureDefinition-studyfinder-condition.html" : "Helsetilstand for vurdering mot studiekriterier",
-    "StructureDefinition-studyfinder-medication-statement.html" : "Legemiddelbruk for vurdering mot studiekriterier"
+    "StructureDefinition-studyfinder-condition.html" : "Helsetilstand for vurdering mot studiekriterier"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/condition-severity",
@@ -255,16 +255,16 @@
     "sources" : ["2.16.840.1.113883.4.642.3.20"],
     "uses" : {
     },
-    "StructureDefinition-studyfinder-organization.html" : "Organisasjon for forskningsstudie",
-    "StructureDefinition-studyfinder-questionnaire-response.html" : "Svar på spørreskjema for studiesøk",
-    "StructureDefinition-studyfinder-study-population.html" : "Målgruppe for forskningsstudie",
-    "StructureDefinition-studyfinder-research-study.html" : "Forskningsstudie for studiefinning",
-    "StructureDefinition-studyfinder-condition.html" : "Helsetilstand for vurdering mot studiekriterier",
+    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier",
     "StructureDefinition-studyfinder-medication-statement.html" : "Legemiddelbruk for vurdering mot studiekriterier",
-    "StructureDefinition-studyfinder-questionnaire.html" : "Spørreskjema for studiesøk",
-    "StructureDefinition-studyfinder-location.html" : "Fysisk studiested",
     "StructureDefinition-studyfinder-participant.html" : "Potensiell studiedeltaker",
-    "StructureDefinition-studyfinder-observation.html" : "Måling for vurdering mot studiekriterier"
+    "StructureDefinition-studyfinder-study-population.html" : "Målgruppe for forskningsstudie",
+    "StructureDefinition-studyfinder-location.html" : "Fysisk studiested",
+    "StructureDefinition-studyfinder-organization.html" : "Organisasjon for forskningsstudie",
+    "StructureDefinition-studyfinder-research-study.html" : "Forskningsstudie for studiefinning",
+    "StructureDefinition-studyfinder-questionnaire.html" : "Spørreskjema for studiesøk",
+    "StructureDefinition-studyfinder-questionnaire-response.html" : "Svar på spørreskjema for studiesøk",
+    "StructureDefinition-studyfinder-condition.html" : "Helsetilstand for vurdering mot studiekriterier"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/link-type",
@@ -517,8 +517,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.446"],
     "uses" : {
     },
-    "StructureDefinition-studyfinder-questionnaire-response.html" : "Svar på spørreskjema for studiesøk",
-    "StructureDefinition-studyfinder-questionnaire.html" : "Spørreskjema for studiesøk"
+    "StructureDefinition-studyfinder-questionnaire.html" : "Spørreskjema for studiesøk",
+    "StructureDefinition-studyfinder-questionnaire-response.html" : "Svar på spørreskjema for studiesøk"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/questionnaire-answers-status",

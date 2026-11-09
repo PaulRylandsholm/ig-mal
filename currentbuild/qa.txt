@@ -3,7 +3,7 @@ StudyFinder : Validation Results
 
 err = 0, warn = 24, info = 23, broken links = 0
 IG Publisher Version: 3.0.3
-Generated Mon Nov 09 12:41:46 UTC 2026. FHIR version 4.0.1 for hl7.fhir.no.studyfinder#0.1.0 (canonical = http://hl7.no/fhir/ig/studyfinder)
+Generated Mon Nov 09 12:56:09 UTC 2026. FHIR version 4.0.1 for hl7.fhir.no.studyfinder#0.1.0 (canonical = http://hl7.no/fhir/ig/studyfinder)
  Build Errors : 0 / 12 / 0
  /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/ImplementationGuide-hl7.fhir.no.studyfinder : 0 / 2 / 3
  /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-condition : 0 / 1 / 4

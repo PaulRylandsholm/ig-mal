@@ -6,8 +6,8 @@
   "status" : "draft",
   "package-id" : "hl7.fhir.no.studyfinder",
   "ig-ver" : "0.1.0",
-  "date" : "Mon, 09 Nov, 2026 12:40:26 +0000",
-  "dateISO8601" : "2026-11-09T12:40:26+00:00",
+  "date" : "Mon, 09 Nov, 2026 12:54:59 +0000",
+  "dateISO8601" : "2026-11-09T12:54:59+00:00",
   "errs" : 0,
   "warnings" : 24,
   "hints" : 23,
@@ -16,5 +16,5 @@
   "suppressed-warnings" : 0,
   "version" : "4.0.1",
   "tool" : "6.0.0-snapshot1 (3)",
-  "maxMemory" : 917630448
+  "maxMemory" : 737868744
 }
