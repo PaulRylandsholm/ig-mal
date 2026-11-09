@@ -27,7 +27,7 @@ Guiden avgjør ikke om en person er endelig kvalifisert til å delta. Det er stu
 | `Condition`, `Observation` og `MedicationStatement` | Kan uttrykke henholdsvis helsetilstander, relevante målinger og legemiddelbruk når disse opplysningene trengs for vurderingen. |
 | `Questionnaire` og `QuestionnaireResponse` | Kan brukes til å innhente opplysninger fra personen på en strukturert måte. |
 
-I FHIR R4 peker `ResearchStudy.site` på en `Organization`. Et fysisk sted kan beskrives med en `Location` og knyttes til organisasjonen. `ResearchStudy.location` er en kodebar beskrivelse, ikke en referanse til en `Location`-ressurs.
+I FHIR R4 peker `ResearchStudy.site` på en `Location`. Et fysisk sted kan knyttes til organisasjonen via `Location.managingOrganization`. `ResearchStudy.location` er en kodebar beskrivelse, ikke en referanse til en `Location`-ressurs.
 
 ### Ressursrelasjoner
 
