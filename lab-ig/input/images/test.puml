@@ -8,7 +8,7 @@ class ResearchStudy {
     +title : string
     +status : code
     +sponsor : Reference(Organization)
-    +site : Reference(Organization)
+    +site : Reference(Location)
     +enrollment : Reference(Group)
 }
 
@@ -37,7 +37,7 @@ class Condition
 class Observation
 class MedicationStatement
 
-ResearchStudy --> Organization : site (0..*)
+ResearchStudy --> Location : site (0..*)
 ResearchStudy --> Group : enrollment (0..*)
 Location --> Organization : managingOrganization (0..1)
 Questionnaire "1" --> "0..*" QuestionnaireResponse : collects answers

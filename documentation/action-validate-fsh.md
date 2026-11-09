@@ -2,15 +2,15 @@
 
 Denne GitHub Actions workflowen er designet for å validere FHIR Shorthand (FSH)-filer i et prosjekt, slik at du slipper å generere ny IG hver gang. I tillegg har noen [online validatorer](https://fshonline.fshschool.org/) problemer hvis man f.eks. benytter seg av no-basis.
 
-Den benytter seg av [fsh-validator](https://github.com/glichtner/fsh-validator) - [se dokumentasjon](https://fsh-validator.readthedocs.io/en/latest/).
+Den benytter seg av [SUSHI](https://fshschool.org/docs/sushi/) for å kompilere og validere alle FSH-definisjoner. Guiden inneholder bare profiler; `fsh-validator` krever eksempelinstanser og kan derfor ikke brukes til denne valideringen. Loggen lagres fortsatt som `input/fsh/fsh-validator.log` for kompatibilitet med artefakter og jobbsammendrag.
 
 ## Trigger
 
 Workflowen kan utløses på flere måter:
 
 - **Manuell utløsing** (`workflow_dispatch`) med valgbare parametere
-- **Pull requests** som endrer FSH-filer eller sushi-config.yaml
-- **Push til main** som endrer FSH-filer eller sushi-config.yaml
+- **Pull requests** som endrer FSH-filer, sushi-config.yaml eller valideringsworkflowen
+- **Push til main** som endrer FSH-filer, sushi-config.yaml eller valideringsworkflowen
 
 ## Miljøvariabler
 
@@ -51,17 +51,7 @@ Når du kjører workflowen manuelt, kan du velge:
        node-version: '20'
    ```
 
-3. **Set up Python**
-   - Bruker `actions/setup-python@v5` for å sette opp Python versjon 3.x.
-
-   ```yaml
-   - name: Set up Python
-     uses: actions/setup-python@v5
-     with:
-       python-version: '3.x'
-   ```
-
-4. **Install fsh-sushi**
+3. **Install fsh-sushi**
    - Installerer `fsh-sushi` globalt ved hjelp av npm.
 
    ```yaml
@@ -69,7 +59,7 @@ Når du kjører workflowen manuelt, kan du velge:
      run: npm install -g fsh-sushi
    ```
 
-5. **Install hl7.fhir.no.basis-2.2.2-snapshots in local cache**
+4. **Install hl7.fhir.no.basis-2.2.2-snapshots in local cache**
    - Installerer nødvendige FHIR-pakker og setter opp lokal cache.
 
    ```yaml
@@ -86,25 +76,18 @@ Når du kjører workflowen manuelt, kan du velge:
        cp -r ./node_modules/hl7.fhir.no.basis/* $HOME/.fhir/packages/hl7.fhir.no.basis#2.2.2/package
    ```
 
-6. **Install fsh-validator**
-   - Installer `fsh-validator` fra GitHub.
+5. **Run FSH validation**
+   - Kjører SUSHI for å validere alle FSH-definisjoner. `shell: bash` aktiverer `pipefail`, slik at SUSHI-feil stopper jobben selv om loggen skrives med `tee`.
 
    ```yaml
-   - name: Install fsh-validator
-     run: pip install -U git+https://github.com/glichtner/fsh-validator
-   ```
-
-7. **Run fsh-validator**
-   - Kjører `fsh-validator` for å validere alle FSH-filer.
-
-   ```yaml
-   - name: Run fsh-validator
+   - name: Run FSH validation
+     shell: bash
      run: |
-       cd ${{ env.IG_SHORTNAME }}/input/fsh/
-       fsh-validator --all --log-path fsh-validator.log
+       cd ${{ env.IG_SHORTNAME }}
+       sushi . 2>&1 | tee input/fsh/fsh-validator.log
    ```
 
-8. **Run SUSHI validation** (valgfritt)
+6. **Run SUSHI validation** (valgfritt)
    - Kjører kun hvis aktivert manuelt. Utfører en fullstendig SUSHI-byggevalidering.
 
    ```yaml
@@ -117,10 +100,10 @@ Når du kjører workflowen manuelt, kan du velge:
        sushi . --require-latest 2>&1 | tee sushi-validation.log
    ```
 
-9. **Display validation results**
+7. **Display validation results**
    - Viser resultater fra både FSH og SUSHI validering (hvis kjørt).
 
-10. **Upload validation artifacts**
+8. **Upload validation artifacts**
     - Laster opp alle valideringslogger som artefakter.
 
     ```yaml
@@ -133,7 +116,7 @@ Når du kjører workflowen manuelt, kan du velge:
           ${{ env.IG_SHORTNAME }}/sushi-validation.log
     ```
 
-11. **Generate job summary**
+9. **Generate job summary**
     - Lager en detaljert rapport som vises i GitHub Actions UI med feil- og advarselstelling.
 
 ## Konfigurasjon for nye brukere

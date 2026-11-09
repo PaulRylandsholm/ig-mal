@@ -9,7 +9,7 @@ Description: "Forskningsstudie som kan vises for personer som leter etter studie
 * status MS
 * sponsor only Reference(StudyFinderOrganization)
 * sponsor MS
-* site only Reference(StudyFinderOrganization)
+* site only Reference(StudyFinderLocation)
 * site MS
 * enrollment only Reference(StudyFinderStudyPopulation)
 * enrollment MS
