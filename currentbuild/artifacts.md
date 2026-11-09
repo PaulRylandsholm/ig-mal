@@ -1,4 +1,4 @@
-# Artifacts Summary - Mal v0.1.0
+# Artifacts Summary - Forskningsstudier for deltakere v0.1.0
 
 * [**Table of Contents**](toc.md)
 * **Artifacts Summary**
@@ -13,14 +13,14 @@ These define constraints on FHIR resources for systems conforming to this implem
 
 | | |
 | :--- | :--- |
-| [Blodprøve](StructureDefinition-mal-observation-blodprove.md) | Profil for vanlige blodprøver |
-| [Pasient](StructureDefinition-mal-patient.md) | Informasjon om pasienten, basert på no-basis. |
-
-### Example: Example Instances 
-
-These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.
-
-| | |
-| :--- | :--- |
-| [Pasient-1](Patient-Pasient-1.md) | Eksempel på norsk pasient med fødselsnummer, navn og kontaktinformasjon |
+| [Forskningsstudie for studiefinning](StructureDefinition-studyfinder-research-study.md) | Forskningsstudie som kan vises for personer som leter etter studier de kan være aktuelle for. |
+| [Fysisk studiested](StructureDefinition-studyfinder-location.md) | Fysisk studiested med adresse og eventuell geografisk posisjon. |
+| [Helsetilstand for vurdering mot studiekriterier](StructureDefinition-studyfinder-condition.md) | Helsetilstand som kan være relevant for inklusjons- eller eksklusjonskriterier. |
+| [Legemiddelbruk for vurdering mot studiekriterier](StructureDefinition-studyfinder-medication-statement.md) | Legemiddelbruk som kan være relevant for inklusjons- eller eksklusjonskriterier. |
+| [Målgruppe for forskningsstudie](StructureDefinition-studyfinder-study-population.md) | Definisjon av målgruppen og strukturerte inklusjons- og eksklusjonskriterier for en forskningsstudie. |
+| [Måling for vurdering mot studiekriterier](StructureDefinition-studyfinder-observation.md) | Måling eller klinisk observasjon som kan være relevant for studiekriterier. |
+| [Organisasjon for forskningsstudie](StructureDefinition-studyfinder-organization.md) | Sponsor, ansvarlig organisasjon eller organisasjon som er studiested. |
+| [Potensiell studiedeltaker](StructureDefinition-studyfinder-participant.md) | Personopplysninger som kan brukes ved en foreløpig vurdering mot studiekriterier. |
+| [Spørreskjema for studiesøk](StructureDefinition-studyfinder-questionnaire.md) | Spørreskjema for strukturert innhenting av nødvendige opplysninger fra en person som leter etter studier. |
+| [Svar på spørreskjema for studiesøk](StructureDefinition-studyfinder-questionnaire-response.md) | Strukturerte opplysninger fra en person som leter etter studier. |
 

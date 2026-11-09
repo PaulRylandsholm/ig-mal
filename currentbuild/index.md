@@ -1,4 +1,4 @@
-# Home - Mal v0.1.0
+# Home - Forskningsstudier for deltakere v0.1.0
 
 * [**Table of Contents**](toc.md)
 * **Home**
@@ -7,42 +7,69 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://hl7.no/fhir/ig/mal/ImplementationGuide/hl7.fhir.no.mal | *Version*:0.1.0 |
-| Draft as of 2026-11-09 | *Computable Name*:Mal |
+| *Official URL*:http://hl7.no/fhir/ig/studyfinder/ImplementationGuide/hl7.fhir.no.studyfinder | *Version*:0.1.0 |
+| Draft as of 2026-11-09 | *Computable Name*:StudyFinder |
 
-### Tittel
+### Forskningsstudier for deltakere
 
-Introduksjonstekst (husk at dette er en mal, og ALL tekst må endres - dette er kun et eksempel)
+Denne implementasjonsguiden beskriver hvordan informasjon om forskningsstudier og potensielle deltakere kan representeres med HL7 FHIR R4. Målet er å gjøre det enklere for en person å finne studier som kan passe ut fra opplysninger som alder, bosted, helsetilstand og legemiddelbruk.
 
-### Mål
+Guiden er rettet mot systemer som publiserer eller formidler studier, og tjenester som lar personer utforske aktuelle studier. Den standardiserer utveksling av data; den definerer ikke en bestemt portal eller en komplett rekrutteringsprosess.
 
-Målet med denne implementasjonsguiden er å gi en standardisert måte å representere og utveksle helsedata på ved hjelp av HL7 FHIR. Guiden beskriver hvordan ulike FHIR-profiler og ressurser kan brukes for å oppnå interoperabilitet mellom helsesystemer.
+#### Omfang
 
-### Omfang
+Første versjon av guiden beskriver:
 
-Denne implementasjonsguiden dekker følgende områder:
+* hvordan en forskningsstudie og studiested kan beskrives
+* hvordan målgrupper og strukturerte inklusjons- og eksklusjonskriterier kan uttrykkes
+* hvilke personopplysninger en tjeneste kan bruke for en foreløpig vurdering av kriteriene
+* hvordan relevante studier kan presenteres, inkludert studiested og eventuell kompensasjon når slik informasjon er tilgjengelig
 
-* Pasientadministrasjon
-* Kliniske observasjoner
-* Medisinsk historikk
-* Behandlingsplaner
-* Laboratorieresultater
+Guiden avgjør ikke om en person er endelig kvalifisert til å delta. Det er studieansvarlig som vurderer dette. Informasjon om kompensasjon er ikke et obligatorisk FHIR R4-felt i denne modellen og må avtales og beskrives særskilt før den standardiseres.
 
-### Brukstilfeller
+#### FHIR-ressurser
 
-#### Pasientregistrering
+| | |
+| :--- | :--- |
+| `ResearchStudy` | Beskriver studiens tittel, status, formål, sponsor, periode og tilknyttede steder. |
+| `Organization` | Beskriver en organisasjon som er studiested, sponsor eller ansvarlig aktør. |
+| `Location` | Kan beskrive et konkret fysisk studiested med adresse og geografisk informasjon. |
+| `Group` | Beskriver målgruppen for studien. I FHIR R4 kan strukturerte kriterier uttrykkes med gruppens`characteristic`-elementer, blant annet alder og helsetilstand. |
+| `Patient` | Kan representere personen når det er nødvendig å utveksle personopplysninger i FHIR. En søketjeneste bør ikke opprette eller lagre en varig pasientressurs uten et reelt behov og gyldig grunnlag. |
+| `Condition`,`Observation`og`MedicationStatement` | Kan uttrykke henholdsvis helsetilstander, relevante målinger og legemiddelbruk når disse opplysningene trengs for vurderingen. |
+| `Questionnaire`og`QuestionnaireResponse` | Kan brukes til å innhente opplysninger fra personen på en strukturert måte. |
 
-Denne guiden beskriver hvordan pasienter kan registreres i et helsesystem ved hjelp av FHIR `Patient`-ressursen. Eksempler inkluderer opprettelse, oppdatering og sletting av pasientdata.
+I FHIR R4 peker `ResearchStudy.site` på en `Location`. Et fysisk sted kan knyttes til organisasjonen via `Location.managingOrganization`. `ResearchStudy.location` er en kodebar beskrivelse, ikke en referanse til en `Location`-ressurs.
 
-#### Kliniske observasjoner
+##### Ressursrelasjoner
 
-Guiden viser hvordan kliniske observasjoner som blodtrykk, puls og temperatur kan representeres ved hjelp av FHIR `Observation`-ressursen.
-
-### Figur
-
-Eksempel på en figur laget med PlantUML.
+Figuren viser hvordan studieopplysninger og målgruppe kan kobles til studiestedet, og hvordan opplysninger fra en person kan innhentes for en foreløpig vurdering.
 
 ![](test.svg)
+
+#### Foreløpig vurdering av kriterier
+
+En søketjeneste kan sammenligne strukturerte studiekriterier med opplysninger personen selv har gitt. Resultatet bør vise hvilke kriterier som ser ut til å være oppfylt, ikke oppfylt eller uavklart fordi det mangler informasjon. Uavklart skal ikke tolkes som kvalifisert.
+
+En samlet prosentvis «match» er ikke definert av FHIR og må ikke presenteres som sannsynligheten for at studieansvarlig godkjenner deltakelse. Tjenesten bør vise at vurderingen er foreløpig og la personen se hvilke opplysninger og kriterier den bygger på.
+
+#### Brukstilfeller
+
+##### Publisere en studie
+
+En studieansvarlig registrerer en rekrutterende studie med beskrivelse, målgruppe, strukturerte kriterier, sponsor og ett eller flere studiesteder.
+
+##### Finne studier som kan passe
+
+En person oppgir nødvendige opplysninger, for eksempel alder, bosted, helsetilstander og legemiddelbruk. Tjenesten viser studier med en forståelig vurdering av hvert kriterium. Avstand beregnes av tjenesten ut fra personens valgte geografiske område og studiestedets adresse eller koordinater; avstandsberegning er ikke definert av FHIR.
+
+##### Friske frivillige
+
+En studie kan angi at den søker friske frivillige. Tjenesten må skille dette fra manglende helseopplysninger: fravær av registrerte tilstander er ikke i seg selv dokumentasjon på at personen er frisk.
+
+#### Personvern
+
+Helseopplysninger er sensitive personopplysninger. Tjenester som bruker denne guiden bør begrense innsamling og lagring til det som er nødvendig, forklare formålet tydelig og ikke sende personens opplysninger til studier eller studieansvarlige uten et eget grunnlag og nødvendig informasjon til personen.
 
 
 
@@ -51,13 +78,13 @@ Eksempel på en figur laget med PlantUML.
 ```json
 {
   "resourceType" : "ImplementationGuide",
-  "id" : "hl7.fhir.no.mal",
-  "url" : "http://hl7.no/fhir/ig/mal/ImplementationGuide/hl7.fhir.no.mal",
+  "id" : "hl7.fhir.no.studyfinder",
+  "url" : "http://hl7.no/fhir/ig/studyfinder/ImplementationGuide/hl7.fhir.no.studyfinder",
   "version" : "0.1.0",
-  "name" : "Mal",
-  "title" : "Mal",
+  "name" : "StudyFinder",
+  "title" : "Forskningsstudier for deltakere",
   "status" : "draft",
-  "date" : "2026-11-09T10:49:38+00:00",
+  "date" : "2026-11-09T12:40:26+00:00",
   "publisher" : "HL7 Norge",
   "contact" : [{
     "name" : "HL7 Norge",
@@ -66,7 +93,7 @@ Eksempel på en figur laget med PlantUML.
       "value" : "https://www.hl7.no"
     }]
   }],
-  "description" : "Implementasjonsguide for å TODO",
+  "description" : "Implementasjonsguide for utveksling av informasjon om forskningsstudier, målgrupper og foreløpig vurdering av deltakelse.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -74,7 +101,7 @@ Eksempel på en figur laget med PlantUML.
       "display" : "Norway"
     }]
   }],
-  "packageId" : "hl7.fhir.no.mal",
+  "packageId" : "hl7.fhir.no.studyfinder",
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.1"],
   "dependsOn" : [{
@@ -214,7 +241,7 @@ Eksempel på en figur laget med PlantUML.
       },
       {
         "url" : "value",
-        "valueString" : "http://hl7.no/fhir/ig/mal/history.html"
+        "valueString" : "http://hl7.no/fhir/ig/studyfinder/history.html"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -390,13 +417,13 @@ Eksempel på en figur laget med PlantUML.
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-mal-observation-blodprove.html"
+        "valueUri" : "StructureDefinition-studyfinder-research-study.html"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/mal-observation-blodprove"
+        "reference" : "StructureDefinition/studyfinder-research-study"
       },
-      "name" : "Blodprøve",
-      "description" : "Profil for vanlige blodprøver",
+      "name" : "Forskningsstudie for studiefinning",
+      "description" : "Forskningsstudie som kan vises for personer som leter etter studier de kan være aktuelle for.",
       "exampleBoolean" : false
     },
     {
@@ -406,30 +433,142 @@ Eksempel på en figur laget med PlantUML.
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-mal-patient.html"
+        "valueUri" : "StructureDefinition-studyfinder-location.html"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/mal-patient"
+        "reference" : "StructureDefinition/studyfinder-location"
       },
-      "name" : "Pasient",
-      "description" : "Informasjon om pasienten, basert på no-basis.",
+      "name" : "Fysisk studiested",
+      "description" : "Fysisk studiested med adresse og eventuell geografisk posisjon.",
       "exampleBoolean" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Patient"
+        "valueString" : "StructureDefinition:resource"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Patient-Pasient-1.html"
+        "valueUri" : "StructureDefinition-studyfinder-condition.html"
       }],
       "reference" : {
-        "reference" : "Patient/Pasient-1"
+        "reference" : "StructureDefinition/studyfinder-condition"
       },
-      "name" : "Pasient-1",
-      "description" : "Eksempel på norsk pasient med fødselsnummer, navn og kontaktinformasjon",
-      "exampleCanonical" : "http://hl7.no/fhir/ig/mal/StructureDefinition/mal-patient"
+      "name" : "Helsetilstand for vurdering mot studiekriterier",
+      "description" : "Helsetilstand som kan være relevant for inklusjons- eller eksklusjonskriterier.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-studyfinder-medication-statement.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/studyfinder-medication-statement"
+      },
+      "name" : "Legemiddelbruk for vurdering mot studiekriterier",
+      "description" : "Legemiddelbruk som kan være relevant for inklusjons- eller eksklusjonskriterier.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-studyfinder-study-population.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/studyfinder-study-population"
+      },
+      "name" : "Målgruppe for forskningsstudie",
+      "description" : "Definisjon av målgruppen og strukturerte inklusjons- og eksklusjonskriterier for en forskningsstudie.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-studyfinder-observation.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/studyfinder-observation"
+      },
+      "name" : "Måling for vurdering mot studiekriterier",
+      "description" : "Måling eller klinisk observasjon som kan være relevant for studiekriterier.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-studyfinder-organization.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/studyfinder-organization"
+      },
+      "name" : "Organisasjon for forskningsstudie",
+      "description" : "Sponsor, ansvarlig organisasjon eller organisasjon som er studiested.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-studyfinder-participant.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/studyfinder-participant"
+      },
+      "name" : "Potensiell studiedeltaker",
+      "description" : "Personopplysninger som kan brukes ved en foreløpig vurdering mot studiekriterier.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-studyfinder-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/studyfinder-questionnaire"
+      },
+      "name" : "Spørreskjema for studiesøk",
+      "description" : "Spørreskjema for strukturert innhenting av nødvendige opplysninger fra en person som leter etter studier.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-studyfinder-questionnaire-response.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/studyfinder-questionnaire-response"
+      },
+      "name" : "Svar på spørreskjema for studiesøk",
+      "description" : "Strukturerte opplysninger fra en person som leter etter studier.",
+      "exampleBoolean" : false
     }],
     "page" : {
       "extension" : [{

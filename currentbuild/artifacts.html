@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - Mal v0.1.0</title>
+    <title>Artifacts Summary - Forskningsstudier for deltakere v0.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -67,7 +67,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Mal</span>
+          <p><span style="font-size:12pt;font-weight:bold">Forskningsstudier for deltakere</span>
             <br/>
             <span style="display:inline-block;">0.1.0 - ci-build
 
@@ -141,7 +141,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Mal - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.no/fhir/ig/mal/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Forskningsstudier for deltakere - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.no/fhir/ig/studyfinder/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -154,9 +154,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <ul>
       <li>
          <a href="#1">Structures: Resource Profiles</a>
-      </li>
-      <li>
-         <a href="#2">Example: Example Instances</a>
       </li>
    </ul>
 </div>
@@ -172,36 +169,92 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-mal-observation-blodprove.html"
-                  title="StructureDefinition/mal-observation-blodprove">Blodprøve</a>
+               <a href="StructureDefinition-studyfinder-research-study.html"
+                  title="StructureDefinition/studyfinder-research-study">Forskningsstudie for studiefinning</a>
             </td>
             <td>
-<p>Profil for vanlige blodprøver</p>
+<p>Forskningsstudie som kan vises for personer som leter etter studier de kan være aktuelle for.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-mal-patient.html"
-                  title="StructureDefinition/mal-patient">Pasient</a>
+               <a href="StructureDefinition-studyfinder-location.html"
+                  title="StructureDefinition/studyfinder-location">Fysisk studiested</a>
             </td>
             <td>
-<p>Informasjon om pasienten, basert på no-basis.</p>
+<p>Fysisk studiested med adresse og eventuell geografisk posisjon.</p>
 </td>
          </tr>
-      </tbody>
-   </table>
-   <a name="2"> </a>
-   <h3>Example: Example Instances </h3>
-    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
-<table class="grid">
-      <col style="width:20%"/>
-      <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="Patient-Pasient-1.html" title="Patient/Pasient-1">Pasient-1</a>
+               <a href="StructureDefinition-studyfinder-condition.html"
+                  title="StructureDefinition/studyfinder-condition">Helsetilstand for vurdering mot studiekriterier</a>
             </td>
             <td>
-<p>Eksempel på norsk pasient med fødselsnummer, navn og kontaktinformasjon</p>
+<p>Helsetilstand som kan være relevant for inklusjons- eller eksklusjonskriterier.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-studyfinder-medication-statement.html"
+                  title="StructureDefinition/studyfinder-medication-statement">Legemiddelbruk for vurdering mot studiekriterier</a>
+            </td>
+            <td>
+<p>Legemiddelbruk som kan være relevant for inklusjons- eller eksklusjonskriterier.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-studyfinder-study-population.html"
+                  title="StructureDefinition/studyfinder-study-population">Målgruppe for forskningsstudie</a>
+            </td>
+            <td>
+<p>Definisjon av målgruppen og strukturerte inklusjons- og eksklusjonskriterier for en forskningsstudie.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-studyfinder-observation.html"
+                  title="StructureDefinition/studyfinder-observation">Måling for vurdering mot studiekriterier</a>
+            </td>
+            <td>
+<p>Måling eller klinisk observasjon som kan være relevant for studiekriterier.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-studyfinder-organization.html"
+                  title="StructureDefinition/studyfinder-organization">Organisasjon for forskningsstudie</a>
+            </td>
+            <td>
+<p>Sponsor, ansvarlig organisasjon eller organisasjon som er studiested.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-studyfinder-participant.html"
+                  title="StructureDefinition/studyfinder-participant">Potensiell studiedeltaker</a>
+            </td>
+            <td>
+<p>Personopplysninger som kan brukes ved en foreløpig vurdering mot studiekriterier.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-studyfinder-questionnaire.html"
+                  title="StructureDefinition/studyfinder-questionnaire">Spørreskjema for studiesøk</a>
+            </td>
+            <td>
+<p>Spørreskjema for strukturert innhenting av nødvendige opplysninger fra en person som leter etter studier.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-studyfinder-questionnaire-response.html"
+                  title="StructureDefinition/studyfinder-questionnaire-response">Svar på spørreskjema for studiesøk</a>
+            </td>
+            <td>
+<p>Strukturerte opplysninger fra en person som leter etter studier.</p>
 </td>
          </tr>
       </tbody>
@@ -224,7 +277,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.hl7.no">HL7 Norge</a>.  Package hl7.fhir.no.mal#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Nov 9, 2026 10:49+0000">2026-11-09</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.hl7.no">HL7 Norge</a>.  Package hl7.fhir.no.studyfinder#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Nov 9, 2026 12:40+0000">2026-11-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

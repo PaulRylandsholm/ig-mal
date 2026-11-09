@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Home - Mal v0.1.0</title>
+    <title>Home - Forskningsstudier for deltakere v0.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -67,7 +67,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Mal</span>
+          <p><span style="font-size:12pt;font-weight:bold">Forskningsstudier for deltakere</span>
             <br/>
             <span style="display:inline-block;">0.1.0 - ci-build
 
@@ -141,7 +141,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Mal - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.no/fhir/ig/mal/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Forskningsstudier for deltakere - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.no/fhir/ig/studyfinder/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Home</h2>
   
 
@@ -153,10 +153,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <table class="colsd">
 
     <tr>
-      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://hl7.no/fhir/ig/mal/ImplementationGuide/hl7.fhir.no.mal<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.no/fhir/ig/mal/ImplementationGuide/hl7.fhir.no.mal"/></span>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://hl7.no/fhir/ig/studyfinder/ImplementationGuide/hl7.fhir.no.studyfinder<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.no/fhir/ig/studyfinder/ImplementationGuide/hl7.fhir.no.studyfinder"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://hl7.no/fhir/ig/mal/ImplementationGuide/hl7.fhir.no.mal|0.1.0"/></span>
+      <span class="copy-text">0.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://hl7.no/fhir/ig/studyfinder/ImplementationGuide/hl7.fhir.no.studyfinder|0.1.0"/></span>
       </td>
     </tr>
 
@@ -179,7 +179,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
 
-      <td><i>Computable Name</i>: <span style="font-family: monospace;">Mal</span></td>
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">StudyFinder</span></td>
     </tr>
 
 
@@ -196,51 +196,100 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-<ul id="markdown-toc">
-  <li><a href="#tittel" id="markdown-toc-tittel">Tittel</a></li>
-  <li><a href="#mål" id="markdown-toc-mål">Mål</a></li>
-  <li><a href="#omfang" id="markdown-toc-omfang">Omfang</a></li>
-  <li><a href="#brukstilfeller" id="markdown-toc-brukstilfeller">Brukstilfeller</a></li>
-  <li><a href="#figur" id="markdown-toc-figur">Figur</a></li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<h3 id="tittel">Tittel</h3>
+<h3 id="forskningsstudier-for-deltakere">Forskningsstudier for deltakere</h3>
 
-<p>Introduksjonstekst (husk at dette er en mal, og ALL tekst må endres - dette er kun et eksempel)</p>
+<p>Denne implementasjonsguiden beskriver hvordan informasjon om forskningsstudier og potensielle deltakere kan representeres med HL7 FHIR R4. Målet er å gjøre det enklere for en person å finne studier som kan passe ut fra opplysninger som alder, bosted, helsetilstand og legemiddelbruk.</p>
 
-<h3 id="mål">Mål</h3>
+<p>Guiden er rettet mot systemer som publiserer eller formidler studier, og tjenester som lar personer utforske aktuelle studier. Den standardiserer utveksling av data; den definerer ikke en bestemt portal eller en komplett rekrutteringsprosess.</p>
 
-<p>Målet med denne implementasjonsguiden er å gi en standardisert måte å representere og utveksle helsedata på ved hjelp av HL7 FHIR. Guiden beskriver hvordan ulike FHIR-profiler og ressurser kan brukes for å oppnå interoperabilitet mellom helsesystemer.</p>
+<h4 id="omfang">Omfang</h4>
 
-<h3 id="omfang">Omfang</h3>
-
-<p>Denne implementasjonsguiden dekker følgende områder:</p>
+<p>Første versjon av guiden beskriver:</p>
 
 <ul>
-  <li>Pasientadministrasjon</li>
-  <li>Kliniske observasjoner</li>
-  <li>Medisinsk historikk</li>
-  <li>Behandlingsplaner</li>
-  <li>Laboratorieresultater</li>
+  <li>hvordan en forskningsstudie og studiested kan beskrives</li>
+  <li>hvordan målgrupper og strukturerte inklusjons- og eksklusjonskriterier kan uttrykkes</li>
+  <li>hvilke personopplysninger en tjeneste kan bruke for en foreløpig vurdering av kriteriene</li>
+  <li>hvordan relevante studier kan presenteres, inkludert studiested og eventuell kompensasjon når slik informasjon er tilgjengelig</li>
 </ul>
 
-<h3 id="brukstilfeller">Brukstilfeller</h3>
+<p>Guiden avgjør ikke om en person er endelig kvalifisert til å delta. Det er studieansvarlig som vurderer dette. Informasjon om kompensasjon er ikke et obligatorisk FHIR R4-felt i denne modellen og må avtales og beskrives særskilt før den standardiseres.</p>
 
-<h4 id="pasientregistrering">Pasientregistrering</h4>
+<h4 id="fhir-ressurser">FHIR-ressurser</h4>
 
-<p>Denne guiden beskriver hvordan pasienter kan registreres i et helsesystem ved hjelp av FHIR <code class="language-plaintext highlighter-rouge">Patient</code>-ressursen. Eksempler inkluderer opprettelse, oppdatering og sletting av pasientdata.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Ressurs</th>
+      <th>Bruk i denne guiden</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ResearchStudy</code></td>
+      <td>Beskriver studiens tittel, status, formål, sponsor, periode og tilknyttede steder.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Organization</code></td>
+      <td>Beskriver en organisasjon som er studiested, sponsor eller ansvarlig aktør.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Location</code></td>
+      <td>Kan beskrive et konkret fysisk studiested med adresse og geografisk informasjon.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Group</code></td>
+      <td>Beskriver målgruppen for studien. I FHIR R4 kan strukturerte kriterier uttrykkes med gruppens <code class="language-plaintext highlighter-rouge">characteristic</code>-elementer, blant annet alder og helsetilstand.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Patient</code></td>
+      <td>Kan representere personen når det er nødvendig å utveksle personopplysninger i FHIR. En søketjeneste bør ikke opprette eller lagre en varig pasientressurs uten et reelt behov og gyldig grunnlag.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Condition</code>, <code class="language-plaintext highlighter-rouge">Observation</code> og <code class="language-plaintext highlighter-rouge">MedicationStatement</code></td>
+      <td>Kan uttrykke henholdsvis helsetilstander, relevante målinger og legemiddelbruk når disse opplysningene trengs for vurderingen.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Questionnaire</code> og <code class="language-plaintext highlighter-rouge">QuestionnaireResponse</code></td>
+      <td>Kan brukes til å innhente opplysninger fra personen på en strukturert måte.</td>
+    </tr>
+  </tbody>
+</table>
 
-<h4 id="kliniske-observasjoner">Kliniske observasjoner</h4>
+<p>I FHIR R4 peker <code class="language-plaintext highlighter-rouge">ResearchStudy.site</code> på en <code class="language-plaintext highlighter-rouge">Location</code>. Et fysisk sted kan knyttes til organisasjonen via <code class="language-plaintext highlighter-rouge">Location.managingOrganization</code>. <code class="language-plaintext highlighter-rouge">ResearchStudy.location</code> er en kodebar beskrivelse, ikke en referanse til en <code class="language-plaintext highlighter-rouge">Location</code>-ressurs.</p>
 
-<p>Guiden viser hvordan kliniske observasjoner som blodtrykk, puls og temperatur kan representeres ved hjelp av FHIR <code class="language-plaintext highlighter-rouge">Observation</code>-ressursen.</p>
+<h5 id="ressursrelasjoner">Ressursrelasjoner</h5>
 
-<h3 id="figur">Figur</h3>
+<p>Figuren viser hvordan studieopplysninger og målgruppe kan kobles til studiestedet, og hvordan opplysninger fra en person kan innhentes for en foreløpig vurdering.</p>
 
-<p>Eksempel på en figur laget med PlantUML.</p>
+<p><img src="test.svg" alt="FHIR-ressurser for forskningsstudie, målgruppe, studiested og deltakeropplysninger" /></p>
 
-<p><img src="test.svg" width="40%" /></p>
+<h4 id="foreløpig-vurdering-av-kriterier">Foreløpig vurdering av kriterier</h4>
+
+<p>En søketjeneste kan sammenligne strukturerte studiekriterier med opplysninger personen selv har gitt. Resultatet bør vise hvilke kriterier som ser ut til å være oppfylt, ikke oppfylt eller uavklart fordi det mangler informasjon. Uavklart skal ikke tolkes som kvalifisert.</p>
+
+<p>En samlet prosentvis «match» er ikke definert av FHIR og må ikke presenteres som sannsynligheten for at studieansvarlig godkjenner deltakelse. Tjenesten bør vise at vurderingen er foreløpig og la personen se hvilke opplysninger og kriterier den bygger på.</p>
+
+<h4 id="brukstilfeller">Brukstilfeller</h4>
+
+<h5 id="publisere-en-studie">Publisere en studie</h5>
+
+<p>En studieansvarlig registrerer en rekrutterende studie med beskrivelse, målgruppe, strukturerte kriterier, sponsor og ett eller flere studiesteder.</p>
+
+<h5 id="finne-studier-som-kan-passe">Finne studier som kan passe</h5>
+
+<p>En person oppgir nødvendige opplysninger, for eksempel alder, bosted, helsetilstander og legemiddelbruk. Tjenesten viser studier med en forståelig vurdering av hvert kriterium. Avstand beregnes av tjenesten ut fra personens valgte geografiske område og studiestedets adresse eller koordinater; avstandsberegning er ikke definert av FHIR.</p>
+
+<h5 id="friske-frivillige">Friske frivillige</h5>
+
+<p>En studie kan angi at den søker friske frivillige. Tjenesten må skille dette fra manglende helseopplysninger: fravær av registrerte tilstander er ikke i seg selv dokumentasjon på at personen er frisk.</p>
+
+<h4 id="personvern">Personvern</h4>
+
+<p>Helseopplysninger er sensitive personopplysninger. Tjenester som bruker denne guiden bør begrense innsamling og lagring til det som er nødvendig, forklare formålet tydelig og ikke sende personens opplysninger til studier eller studieansvarlige uten et eget grunnlag og nødvendig informasjon til personen.</p>
 
 
 
@@ -261,7 +310,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.hl7.no">HL7 Norge</a>.  Package hl7.fhir.no.mal#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Nov 9, 2026 10:49+0000">2026-11-09</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.hl7.no">HL7 Norge</a>.  Package hl7.fhir.no.studyfinder#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Nov 9, 2026 12:40+0000">2026-11-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

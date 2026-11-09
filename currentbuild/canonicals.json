@@ -1,21 +1,77 @@
 [{
-  "id" : "hl7.fhir.no.mal",
+  "id" : "hl7.fhir.no.studyfinder",
   "type" : "ImplementationGuide",
-  "url" : "http://hl7.no/fhir/ig/mal/ImplementationGuide/hl7.fhir.no.mal",
+  "url" : "http://hl7.no/fhir/ig/studyfinder/ImplementationGuide/hl7.fhir.no.studyfinder",
   "version" : "0.1.0",
-  "name" : "Mal"
+  "name" : "StudyFinder"
 },
 {
-  "id" : "mal-observation-blodprove",
+  "id" : "studyfinder-condition",
   "type" : "StructureDefinition",
-  "url" : "http://hl7.no/fhir/ig/mal/StructureDefinition/mal-observation-blodprove",
+  "url" : "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-condition",
   "version" : "0.1.0",
-  "name" : "MalObservationBlood"
+  "name" : "StudyFinderCondition"
 },
 {
-  "id" : "mal-patient",
+  "id" : "studyfinder-location",
   "type" : "StructureDefinition",
-  "url" : "http://hl7.no/fhir/ig/mal/StructureDefinition/mal-patient",
+  "url" : "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-location",
   "version" : "0.1.0",
-  "name" : "MalPatient"
+  "name" : "StudyFinderLocation"
+},
+{
+  "id" : "studyfinder-medication-statement",
+  "type" : "StructureDefinition",
+  "url" : "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-medication-statement",
+  "version" : "0.1.0",
+  "name" : "StudyFinderMedicationStatement"
+},
+{
+  "id" : "studyfinder-observation",
+  "type" : "StructureDefinition",
+  "url" : "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-observation",
+  "version" : "0.1.0",
+  "name" : "StudyFinderObservation"
+},
+{
+  "id" : "studyfinder-organization",
+  "type" : "StructureDefinition",
+  "url" : "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-organization",
+  "version" : "0.1.0",
+  "name" : "StudyFinderOrganization"
+},
+{
+  "id" : "studyfinder-participant",
+  "type" : "StructureDefinition",
+  "url" : "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-participant",
+  "version" : "0.1.0",
+  "name" : "StudyFinderParticipant"
+},
+{
+  "id" : "studyfinder-questionnaire",
+  "type" : "StructureDefinition",
+  "url" : "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-questionnaire",
+  "version" : "0.1.0",
+  "name" : "StudyFinderQuestionnaire"
+},
+{
+  "id" : "studyfinder-questionnaire-response",
+  "type" : "StructureDefinition",
+  "url" : "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-questionnaire-response",
+  "version" : "0.1.0",
+  "name" : "StudyFinderQuestionnaireResponse"
+},
+{
+  "id" : "studyfinder-research-study",
+  "type" : "StructureDefinition",
+  "url" : "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-research-study",
+  "version" : "0.1.0",
+  "name" : "StudyFinderResearchStudy"
+},
+{
+  "id" : "studyfinder-study-population",
+  "type" : "StructureDefinition",
+  "url" : "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-study-population",
+  "version" : "0.1.0",
+  "name" : "StudyFinderStudyPopulation"
 }]

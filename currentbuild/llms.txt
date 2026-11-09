@@ -1,4 +1,4 @@
-# hl7.fhir.no.mal#0.1.0: Mal
+# hl7.fhir.no.studyfinder#0.1.0: Forskningsstudier for deltakere
 
 ## Pages
 
@@ -9,13 +9,17 @@
 
 ### Resource Profiles
 
-* [Blodprøve](StructureDefinition-mal-observation-blodprove.md)
-* [Pasient](StructureDefinition-mal-patient.md)
+* [Helsetilstand for vurdering mot studiekriterier](StructureDefinition-studyfinder-condition.md)
+* [Fysisk studiested](StructureDefinition-studyfinder-location.md)
+* [Legemiddelbruk for vurdering mot studiekriterier](StructureDefinition-studyfinder-medication-statement.md)
+* [Måling for vurdering mot studiekriterier](StructureDefinition-studyfinder-observation.md)
+* [Organisasjon for forskningsstudie](StructureDefinition-studyfinder-organization.md)
+* [Potensiell studiedeltaker](StructureDefinition-studyfinder-participant.md)
+* [Svar på spørreskjema for studiesøk](StructureDefinition-studyfinder-questionnaire-response.md)
+* [Spørreskjema for studiesøk](StructureDefinition-studyfinder-questionnaire.md)
+* [Forskningsstudie for studiefinning](StructureDefinition-studyfinder-research-study.md)
+* [Målgruppe for forskningsstudie](StructureDefinition-studyfinder-study-population.md)
 
 ### ImplementationGuides
 
-* [Mal](index.md)
-
-### Examples
-
-* [Pasient-1 (Patient)](Patient-Pasient-1.md)
+* [Forskningsstudier for deltakere](index.md)

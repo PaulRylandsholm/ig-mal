@@ -1,18 +1,24 @@
-Mal : Validation Results
+StudyFinder : Validation Results
 =========================================
 
-err = 1, warn = 17, info = 7, broken links = 0
+err = 0, warn = 24, info = 23, broken links = 0
 IG Publisher Version: 3.0.3
-Generated Mon Nov 09 10:52:24 UTC 2026. FHIR version 4.0.1 for hl7.fhir.no.mal#0.1.0 (canonical = http://hl7.no/fhir/ig/mal)
- Build Errors : 0 / 13 / 0
- /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/ImplementationGuide-hl7.fhir.no.mal : 0 / 2 / 3
- /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/Patient-Pasient-1 : 0 / 0 / 1
- /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-mal-observation-blodprove : 0 / 1 / 4
- /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-mal-patient : 1 / 1 / 3
+Generated Mon Nov 09 12:41:46 UTC 2026. FHIR version 4.0.1 for hl7.fhir.no.studyfinder#0.1.0 (canonical = http://hl7.no/fhir/ig/studyfinder)
+ Build Errors : 0 / 12 / 0
+ /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/ImplementationGuide-hl7.fhir.no.studyfinder : 0 / 2 / 3
+ /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-condition : 0 / 1 / 4
+ /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-location : 0 / 1 / 3
+ /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-medication-statement : 0 / 1 / 3
+ /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-observation : 0 / 1 / 3
+ /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-organization : 0 / 1 / 3
+ /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-participant : 0 / 1 / 3
+ /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-questionnaire : 0 / 1 / 3
+ /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-questionnaire-response : 0 / 1 / 3
+ /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-research-study : 0 / 1 / 3
+ /__w/ig-mal/ig-mal/lab-ig/fsh-generated/resources/StructureDefinition-studyfinder-study-population : 0 / 1 / 3
 </table>
 
 == n/a ==
-WARNING: Patient.extension.extension: The reference urn:iso:std:iso:3166 could not be resolved
 WARNING: /__w/ig-mal/ig-mal/lab-ig/output/searchform.html: The html source is not well formed: Found "</a>" expecting "</img>" at line 34 column 177
 WARNING: /__w/ig-mal/ig-mal/lab-ig/output/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 79 column 10
 WARNING: /__w/ig-mal/ig-mal/lab-ig/output/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 80 column 9
@@ -27,27 +33,71 @@ WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-ta
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
 
 
-== fsh-generated/resources/ImplementationGuide-hl7.fhir.no.mal.json ==
-INFORMATION: ImplementationGuide/hl7.fhir.no.mal: ImplementationGuide.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
-WARNING: ImplementationGuide/hl7.fhir.no.mal: ImplementationGuide.dependsOn[2].uri: A definition could not be found for Canonical URL 'http://fhir.org/packages/hl7.fhir.no.basis/ImplementationGuide/hl7.fhir.no.basis'
-WARNING: ImplementationGuide/hl7.fhir.no.mal: ImplementationGuide.dependsOn[2]: The canonical URL http://fhir.org/packages/hl7.fhir.no.basis/ImplementationGuide/hl7.fhir.no.basis doesn't point to an actual ImplementationGuide resource
-INFORMATION: Resource: The resource ImplementationGuide/hl7.fhir.no.mal could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+== fsh-generated/resources/ImplementationGuide-hl7.fhir.no.studyfinder.json ==
+INFORMATION: ImplementationGuide/hl7.fhir.no.studyfinder: ImplementationGuide.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
+WARNING: ImplementationGuide/hl7.fhir.no.studyfinder: ImplementationGuide.dependsOn[2].uri: A definition could not be found for Canonical URL 'http://fhir.org/packages/hl7.fhir.no.basis/ImplementationGuide/hl7.fhir.no.basis'
+WARNING: ImplementationGuide/hl7.fhir.no.studyfinder: ImplementationGuide.dependsOn[2]: The canonical URL http://fhir.org/packages/hl7.fhir.no.basis/ImplementationGuide/hl7.fhir.no.basis doesn't point to an actual ImplementationGuide resource
+INFORMATION: Resource: The resource ImplementationGuide/hl7.fhir.no.studyfinder could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
 
 
-== fsh-generated/resources/Patient-Pasient-1.json ==
+== fsh-generated/resources/StructureDefinition-studyfinder-condition.json ==
+INFORMATION: StructureDefinition/studyfinder-condition: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
+INFORMATION: StructureDefinition/studyfinder-condition: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.4.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
+INFORMATION: Resource: The resource StructureDefinition/studyfinder-condition could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+WARNING: StructureDefinition.where(url = 'http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-condition'): The Implementation Guide contains no examples for this profile
 
 
-== fsh-generated/resources/StructureDefinition-mal-observation-blodprove.json ==
-INFORMATION: StructureDefinition/mal-observation-blodprove: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
-INFORMATION: StructureDefinition/mal-observation-blodprove: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.4.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
-INFORMATION: Resource: The resource StructureDefinition/mal-observation-blodprove could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
-WARNING: StructureDefinition.where(url = 'http://hl7.no/fhir/ig/mal/StructureDefinition/mal-observation-blodprove'): The Implementation Guide contains no examples for this profile
+== fsh-generated/resources/StructureDefinition-studyfinder-location.json ==
+INFORMATION: StructureDefinition/studyfinder-location: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
+INFORMATION: Resource: The resource StructureDefinition/studyfinder-location could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+WARNING: StructureDefinition.where(url = 'http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-location'): The Implementation Guide contains no examples for this profile
 
 
-== fsh-generated/resources/StructureDefinition-mal-patient.json ==
-INFORMATION: StructureDefinition/mal-patient: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
-WARNING: StructureDefinition/mal-patient: StructureDefinition.snapshot.element[8].type[0].profile[0]: There are multiple different potential matches for the url 'http://hl7.org/fhir/StructureDefinition/patient-citizenship'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '5.4.0', found versions: 4.0.1 (from hl7.fhir.r4.core#4.0.1), 5.4.0 (from hl7.fhir.uv.extensions.r4#5.4.0). Suggested fix: change the canonical reference from 'http://hl7.org/fhir/StructureDefinition/patient-citizenship' to 'http://hl7.org/fhir/StructureDefinition/patient-citizenship|5.4.0'
-ERROR: StructureDefinition/mal-patient: StructureDefinition.snapshot.element[11].binding: The valueSet reference urn:iso:std:iso:3166 on element Patient.extension.extension points to something that is not a value set (CodeSystem)
-INFORMATION: Resource: The resource StructureDefinition/mal-patient could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+== fsh-generated/resources/StructureDefinition-studyfinder-medication-statement.json ==
+INFORMATION: StructureDefinition/studyfinder-medication-statement: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
+INFORMATION: Resource: The resource StructureDefinition/studyfinder-medication-statement could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+WARNING: StructureDefinition.where(url = 'http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-medication-statement'): The Implementation Guide contains no examples for this profile
+
+
+== fsh-generated/resources/StructureDefinition-studyfinder-observation.json ==
+INFORMATION: StructureDefinition/studyfinder-observation: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
+INFORMATION: Resource: The resource StructureDefinition/studyfinder-observation could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+WARNING: StructureDefinition.where(url = 'http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-observation'): The Implementation Guide contains no examples for this profile
+
+
+== fsh-generated/resources/StructureDefinition-studyfinder-organization.json ==
+INFORMATION: StructureDefinition/studyfinder-organization: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
+INFORMATION: Resource: The resource StructureDefinition/studyfinder-organization could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+WARNING: StructureDefinition.where(url = 'http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-organization'): The Implementation Guide contains no examples for this profile
+
+
+== fsh-generated/resources/StructureDefinition-studyfinder-participant.json ==
+INFORMATION: StructureDefinition/studyfinder-participant: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
+INFORMATION: Resource: The resource StructureDefinition/studyfinder-participant could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+WARNING: StructureDefinition.where(url = 'http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-participant'): The Implementation Guide contains no examples for this profile
+
+
+== fsh-generated/resources/StructureDefinition-studyfinder-questionnaire.json ==
+INFORMATION: StructureDefinition/studyfinder-questionnaire: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
+INFORMATION: Resource: The resource StructureDefinition/studyfinder-questionnaire could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+WARNING: StructureDefinition.where(url = 'http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-questionnaire'): The Implementation Guide contains no examples for this profile
+
+
+== fsh-generated/resources/StructureDefinition-studyfinder-questionnaire-response.json ==
+INFORMATION: StructureDefinition/studyfinder-questionnaire-response: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
+INFORMATION: Resource: The resource StructureDefinition/studyfinder-questionnaire-response could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+WARNING: StructureDefinition.where(url = 'http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-questionnaire-response'): The Implementation Guide contains no examples for this profile
+
+
+== fsh-generated/resources/StructureDefinition-studyfinder-research-study.json ==
+INFORMATION: StructureDefinition/studyfinder-research-study: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
+INFORMATION: Resource: The resource StructureDefinition/studyfinder-research-study could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+WARNING: StructureDefinition.where(url = 'http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-research-study'): The Implementation Guide contains no examples for this profile
+
+
+== fsh-generated/resources/StructureDefinition-studyfinder-study-population.json ==
+INFORMATION: StructureDefinition/studyfinder-study-population: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NO for language(s) 'no-NO'. The display is 'Norway' which is a valid display for the default language
+INFORMATION: Resource: The resource StructureDefinition/studyfinder-study-population could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+WARNING: StructureDefinition.where(url = 'http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-study-population'): The Implementation Guide contains no examples for this profile
 
 

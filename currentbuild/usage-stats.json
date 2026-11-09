@@ -1,27 +1,72 @@
 {
-  "package": "hl7.fhir.no.mal",
+  "package": "hl7.fhir.no.studyfinder",
   "version": "0.1.0",
   "fhirVersion": "4.0.1",
   "jurisdiction": "NO",
   "extensions": [],
   "profiles": {
+    "Condition": [
+      {
+        "url": "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-condition",
+        "title": "Helsetilstand for vurdering mot studiekriterier"
+      }
+    ],
+    "Location": [
+      {
+        "url": "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-location",
+        "title": "Fysisk studiested"
+      }
+    ],
+    "MedicationStatement": [
+      {
+        "url": "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-medication-statement",
+        "title": "Legemiddelbruk for vurdering mot studiekriterier"
+      }
+    ],
     "Observation": [
       {
-        "url": "http://hl7.no/fhir/ig/mal/StructureDefinition/mal-observation-blodprove",
-        "title": "Blodprøve"
+        "url": "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-observation",
+        "title": "Måling for vurdering mot studiekriterier"
+      }
+    ],
+    "Organization": [
+      {
+        "url": "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-organization",
+        "title": "Organisasjon for forskningsstudie"
       }
     ],
     "Patient": [
       {
-        "url": "http://hl7.no/fhir/ig/mal/StructureDefinition/mal-patient",
-        "title": "Pasient"
+        "url": "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-participant",
+        "title": "Potensiell studiedeltaker"
+      }
+    ],
+    "Questionnaire": [
+      {
+        "url": "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-questionnaire",
+        "title": "Spørreskjema for studiesøk"
+      }
+    ],
+    "QuestionnaireResponse": [
+      {
+        "url": "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-questionnaire-response",
+        "title": "Svar på spørreskjema for studiesøk"
+      }
+    ],
+    "ResearchStudy": [
+      {
+        "url": "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-research-study",
+        "title": "Forskningsstudie for studiefinning"
+      }
+    ],
+    "Group": [
+      {
+        "url": "http://hl7.no/fhir/ig/studyfinder/StructureDefinition/studyfinder-study-population",
+        "title": "Målgruppe for forskningsstudie"
       }
     ]
   },
   "usage": {
-    "http://hl7.no/fhir/StructureDefinition/no-basis-middlename": [
-      "Patient.name"
-    ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
       "StructureDefinition.snapshot.element.constraint"
     ],
@@ -33,12 +78,6 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
       "StructureDefinition.snapshot.element.binding"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
-      "StructureDefinition.snapshot.element"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/patient-citizenship": [
-      "Patient"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
       "StructureDefinition.snapshot.element"
@@ -61,9 +100,6 @@
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
       "ImplementationGuide.dependsOn"
-    ],
-    "http://hl7.org/fhir/tools/StructureDefinition/implied-type-slice": [
-      "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
       "ImplementationGuide.definition.resource"

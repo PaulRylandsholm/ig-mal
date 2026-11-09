@@ -1,5 +1,41 @@
 {
   "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "Medication Status Codes",
+    "title" : "Medication  status  codes",
+    "description" : "Medication Status Codes",
+    "oids" : ["2.16.840.1.113883.4.642.4.1379"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-medication-statement-status.html" : "Medication  status  codes"
+  },
+  {
+    "url" : "http://hl7.org/fhir/address-type",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "AddressType",
+    "title" : "AddressType",
+    "description" : "The type of an address (physical / postal).",
+    "oids" : ["2.16.840.1.113883.4.642.4.70"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-address-type.html" : "AddressType"
+  },
+  {
+    "url" : "http://hl7.org/fhir/address-use",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "AddressUse",
+    "title" : "AddressUse",
+    "description" : "The use of an address.",
+    "oids" : ["2.16.840.1.113883.4.642.4.68"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-address-use.html" : "AddressUse"
+  },
+  {
     "url" : "http://hl7.org/fhir/administrative-gender",
     "version" : "4.0.1",
     "status" : "active",
@@ -12,16 +48,40 @@
     "http://hl7.org/fhir/R4/valueset-administrative-gender.html" : "AdministrativeGender"
   },
   {
-    "url" : "http://hl7.org/fhir/identifier-use",
+    "url" : "http://hl7.org/fhir/days-of-week",
     "version" : "4.0.1",
     "status" : "active",
-    "name" : "IdentifierUse",
-    "title" : "IdentifierUse",
-    "description" : "Identifies the purpose for this identifier, if known .",
-    "oids" : ["2.16.840.1.113883.4.642.4.58"],
+    "name" : "DaysOfWeek",
+    "title" : "DaysOfWeek",
+    "description" : "The days of the week.",
+    "oids" : ["2.16.840.1.113883.4.642.4.513"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-identifier-use.html" : "IdentifierUse"
+    "http://hl7.org/fhir/R4/valueset-days-of-week.html" : "DaysOfWeek"
+  },
+  {
+    "url" : "http://hl7.org/fhir/group-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "GroupType",
+    "title" : "GroupType",
+    "description" : "Types of resources that are part of group.",
+    "oids" : ["2.16.840.1.113883.4.642.4.285"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-group-type.html" : "GroupType"
+  },
+  {
+    "url" : "http://hl7.org/fhir/item-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "QuestionnaireItemType",
+    "title" : "QuestionnaireItemType",
+    "description" : "Distinguishes groups from questions and display text and indicates data type for questions.",
+    "oids" : ["2.16.840.1.113883.4.642.4.445"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-item-type.html" : "QuestionnaireItemType"
   },
   {
     "url" : "http://hl7.org/fhir/link-type",
@@ -36,16 +96,28 @@
     "http://hl7.org/fhir/R4/valueset-link-type.html" : "LinkType"
   },
   {
-    "url" : "http://hl7.org/fhir/name-use",
+    "url" : "http://hl7.org/fhir/location-mode",
     "version" : "4.0.1",
-    "status" : "active",
-    "name" : "NameUse",
-    "title" : "NameUse",
-    "description" : "The use of a human name.",
-    "oids" : ["2.16.840.1.113883.4.642.4.66"],
+    "status" : "draft",
+    "name" : "LocationMode",
+    "title" : "LocationMode",
+    "description" : "Indicates whether a resource instance represents a specific location or a class of locations.",
+    "oids" : ["2.16.840.1.113883.4.642.4.331"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-name-use.html" : "NameUse"
+    "http://hl7.org/fhir/R4/valueset-location-mode.html" : "LocationMode"
+  },
+  {
+    "url" : "http://hl7.org/fhir/location-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "LocationStatus",
+    "title" : "LocationStatus",
+    "description" : "Indicates whether the location is still in use.",
+    "oids" : ["2.16.840.1.113883.4.642.4.333"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-location-status.html" : "LocationStatus"
   },
   {
     "url" : "http://hl7.org/fhir/observation-status",
@@ -60,6 +132,77 @@
     "http://hl7.org/fhir/R4/valueset-observation-status.html" : "ObservationStatus"
   },
   {
+    "url" : "http://hl7.org/fhir/publication-status",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "PublicationStatus",
+    "title" : "PublicationStatus",
+    "description" : "The lifecycle status of an artifact.",
+    "oids" : ["2.16.840.1.113883.4.642.4.4"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-publication-status.html" : "PublicationStatus"
+  },
+  {
+    "url" : "http://hl7.org/fhir/questionnaire-answers-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "QuestionnaireResponseStatus",
+    "title" : "QuestionnaireResponseStatus",
+    "description" : "Lifecycle status of the questionnaire response.",
+    "oids" : ["2.16.840.1.113883.4.642.4.448"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-questionnaire-answers-status.html" : "QuestionnaireResponseStatus"
+  },
+  {
+    "url" : "http://hl7.org/fhir/questionnaire-enable-behavior",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "EnableWhenBehavior",
+    "title" : "EnableWhenBehavior",
+    "description" : "Controls how multiple enableWhen values are interpreted -  whether all or any must be true.",
+    "oids" : ["2.16.840.1.113883.4.642.4.1008"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-questionnaire-enable-behavior.html" : "EnableWhenBehavior"
+  },
+  {
+    "url" : "http://hl7.org/fhir/questionnaire-enable-operator",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "QuestionnaireItemOperator",
+    "title" : "QuestionnaireItemOperator",
+    "description" : "The criteria by which a question is enabled.",
+    "oids" : ["2.16.840.1.113883.4.642.4.1006"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-questionnaire-enable-operator.html" : "QuestionnaireItemOperator"
+  },
+  {
+    "url" : "http://hl7.org/fhir/research-study-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ResearchStudyStatus",
+    "title" : "ResearchStudyStatus",
+    "description" : "Codes that convey the current status of the research study.",
+    "oids" : ["2.16.840.1.113883.4.642.4.820"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-research-study-status.html" : "ResearchStudyStatus"
+  },
+  {
+    "url" : "http://hl7.org/fhir/resource-types",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "ResourceType",
+    "title" : "ResourceType",
+    "description" : "One of the resource types defined as part of this version of FHIR.",
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-resource-types.html" : "ResourceType"
+  },
+  {
     "url" : "http://snomed.info/sct",
     "version" : null,
     "status" : "active",
@@ -69,9 +212,65 @@
     "oids" : ["2.16.840.1.113883.6.96"],
     "uses" : {
     },
+    "http://hl7.org/fhir/R4/valueset-medication-codes.html" : "SNOMED CT Medication Codes",
+    "http://hl7.org/fhir/R4/valueset-condition-code.html" : "Condition/Problem/Diagnosis Codes",
+    "http://hl7.org/fhir/R4/valueset-condition-severity.html" : "Condition/Diagnosis Severity",
+    "http://hl7.org/fhir/R4/valueset-condition-stage-type.html" : "Condition Stage Type",
+    "http://hl7.org/fhir/R4/valueset-observation-methods.html" : "Observation Methods",
+    "http://hl7.org/fhir/R4/valueset-reason-medication-status-codes.html" : "SNOMED CT Drug Therapy Status codes ",
+    "http://hl7.org/fhir/R4/valueset-manifestation-or-symptom.html" : "Manifestation and Symptom Codes",
+    "http://hl7.org/fhir/R4/valueset-questionnaire-answers.html" : "Questionnaire Answer Codes",
     "http://hl7.org/fhir/R4/valueset-referencerange-appliesto.html" : "Observation Reference Range Applies To Codes",
-    "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures",
-    "http://hl7.org/fhir/R4/valueset-observation-methods.html" : "Observation Methods"
+    "http://hl7.org/fhir/R4/valueset-condition-stage.html" : "Condition Stage",
+    "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/condition-category",
+    "version" : "2.0.0",
+    "status" : "active",
+    "name" : "ConditionCategoryCodes",
+    "title" : "Condition Category Codes",
+    "description" : "Preferred value set for Condition Categories.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1073"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-condition-category.html" : "Condition Category Codes"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "ConditionClinicalStatusCodes",
+    "title" : "Condition Clinical Status Codes",
+    "description" : "Preferred value set for Condition Clinical Status.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1074"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-condition-clinical.html" : "Condition Clinical Status Codes"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+    "version" : "2.0.1",
+    "status" : "active",
+    "name" : "ConditionVerificationStatus",
+    "title" : "ConditionVerificationStatus",
+    "description" : "The verification status to support or decline the clinical status of the condition or diagnosis.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1075"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-condition-ver-status.html" : "ConditionVerificationStatus"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/contactentity-type",
+    "version" : "2.0.0",
+    "status" : "active",
+    "name" : "ContactEntityType",
+    "title" : "Contact entity type",
+    "description" : "This example value set defines a set of codes that can be used to indicate the purpose for which you would contact a contact party.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1129"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-contactentity-type.html" : "Contact entity type"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/data-absent-reason",
@@ -86,6 +285,30 @@
     "http://hl7.org/fhir/R4/valueset-data-absent-reason.html" : "DataAbsentReason"
   },
   {
+    "url" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+    "version" : "2.0.1",
+    "status" : "active",
+    "name" : "LocationType",
+    "title" : "Location type",
+    "description" : "This example value set defines a set of codes that can be used to indicate the physical form of the Location.\r\rThis includes several 'non physical' codes which are still considered a location.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1108"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-location-physical-type.html" : "Location type"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/medication-statement-category",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "Medication usage category codes",
+    "title" : "Medication usage category codes",
+    "description" : "Medication Status Codes",
+    "oids" : ["2.16.840.1.113883.4.642.4.1120"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-medication-statement-category.html" : "Medication usage category codes"
+  },
+  {
     "url" : "http://terminology.hl7.org/CodeSystem/observation-category",
     "version" : "2.0.0",
     "status" : "active",
@@ -96,6 +319,18 @@
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-observation-category.html" : "Observation Category Codes"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/organization-type",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "OrganizationType",
+    "title" : "Organization type",
+    "description" : "This example value set defines a set of codes that can be used to indicate a type of organization.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1128"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-organization-type.html" : "Organization type"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
@@ -110,6 +345,66 @@
     "http://hl7.org/fhir/R4/valueset-referencerange-meaning.html" : "Observation Reference Range Meaning Codes"
   },
   {
+    "url" : "http://terminology.hl7.org/CodeSystem/research-study-objective-type",
+    "version" : "2.0.0",
+    "status" : "active",
+    "name" : "ResearchStudyObjectiveType",
+    "title" : "ResearchStudyObjectiveType",
+    "description" : "Codes for the kind of study objective.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1248"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-research-study-objective-type.html" : "ResearchStudyObjectiveType"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/research-study-phase",
+    "version" : "1.0.0",
+    "status" : "active",
+    "name" : "ResearchStudyPhase",
+    "title" : "ResearchStudyPhase",
+    "description" : "Codes for the stage in the progression of a therapy from initial experimental use in humans in clinical trials to post-market evaluation.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1247"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-research-study-phase.html" : "ResearchStudyPhase"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type",
+    "version" : "2.0.0",
+    "status" : "active",
+    "name" : "ResearchStudyPrimaryPurposeType",
+    "title" : "ResearchStudyPrimaryPurposeType",
+    "description" : "Codes for the main intent of the study.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1250"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-research-study-prim-purp-type.html" : "ResearchStudyPrimaryPurposeType"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/research-study-reason-stopped",
+    "version" : "2.0.0",
+    "status" : "active",
+    "name" : "ResearchStudyReasonStopped",
+    "title" : "ResearchStudyReasonStopped",
+    "description" : "Codes for why the study ended prematurely.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1249"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-research-study-reason-stopped.html" : "ResearchStudyReasonStopped"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/v2-0116",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "BedStatus",
+    "title" : "bedStatus",
+    "description" : "Code system of concepts which specify the state of a bed in an inpatient setting, and is used to determine if a patient may be assigned to it or not.  Used in HL7 Version 2.x messaging in the DLD and PV1 segments.",
+    "oids" : ["2.16.840.1.113883.18.47"],
+    "uses" : {
+    },
+    "http://terminology.hl7.org/7.5.0/ValueSet-v2-0116.html" : "hl7VS-bedStatus"
+  },
+  {
     "url" : "http://terminology.hl7.org/CodeSystem/v2-0131",
     "version" : "3.0.0",
     "status" : "active",
@@ -120,18 +415,6 @@
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-patient-contactrelationship.html" : "Patient Contact Relationship "
-  },
-  {
-    "url" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-    "version" : "5.0.0",
-    "status" : "active",
-    "name" : "IdentifierType",
-    "title" : "identifierType",
-    "description" : "HL7-defined code system of concepts specifying type of identifier. Used in HL7 Version 2.x messaging data types CX, PLN, PPN, XCN and XON.",
-    "oids" : ["2.16.840.1.113883.18.108"],
-    "uses" : {
-    },
-    "http://hl7.org/fhir/R4/valueset-identifier-type.html" : "IdentifierType"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
@@ -168,5 +451,17 @@
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-observation-interpretation.html" : "Observation Interpretation Codes"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+    "version" : "4.0.0",
+    "status" : "active",
+    "name" : "RoleCode",
+    "title" : "RoleCode",
+    "description" : "A set of codes further specifying the kind of Role; specific classification codes for further qualifying RoleClass codes.",
+    "oids" : ["2.16.840.1.113883.5.111"],
+    "uses" : {
+    },
+    "http://terminology.hl7.org/7.5.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html" : "ServiceDeliveryLocationRoleType"
   }]
 }
